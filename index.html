@@ -1,265 +1,680 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="SAMANDTECH. Soluciones informáticas, soporte técnico y tecnología para personas y negocios.">
-<title>SAMANDTECH · Soluciones informáticas</title>
-<link rel="stylesheet" href="css/styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SEO Básico & Meta Description -->
+  <title>SAMANDTECH | Soporte Técnico IT, Infraestructura y Servicios Gestionados</title>
+  <meta name="description" content="Servicios gestionados de tecnología (MSP), soporte técnico empresarial, redes, servidores, respaldos y monitoreo personalizado. Planes escalables con atención remota y presencial.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1e2937">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SAMANDTECH">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="SAMANDTECH | Soporte Técnico IT y Servicios Gestionados">
+  <meta property="og:description" content="Soporte técnico, administración de infraestructura IT, redes, respaldos y planes mensuales adaptados a tu operación.">
+  <meta property="og:image" content="assets/isotipo.svg">
+
+  <!-- Favicon (usando el asset vectorial oficial existente) -->
+  <link rel="icon" type="image/svg+xml" href="assets/isotipo.svg">
+  <link rel="apple-touch-icon" href="assets/isotipo.svg">
+
+  <!-- Optimización de carga de fuentes y hoja de estilos -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Datos Estructurados Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "SAMANDTECH",
+    "description": "Soluciones tecnológicas y servicios gestionados (MSP) de infraestructura IT, redes, servidores, soporte técnico, respaldos y monitoreo personalizado.",
+    "logo": "assets/logo-dark.svg",
+    "image": "assets/isotipo.svg",
+    "knowsAbout": [
+      "Redes y conectividad",
+      "Servidores e infraestructura",
+      "Soporte técnico empresarial",
+      "Respaldos y bases de datos",
+      "CCTV y control de acceso biométrico",
+      "Monitoreo de infraestructura IT"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Planes de Servicios Gestionados (MSP)",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Plan Básico",
+          "description": "Soporte y mantenimiento continuo para operaciones de hasta 10 equipos.",
+          "priceCurrency": "USD",
+          "price": "190"
+        },
+        {
+          "@type": "Offer",
+          "name": "Plan Avanzado",
+          "description": "Gestión proactiva, monitoreo y prioridad operativa para hasta 25 equipos.",
+          "priceCurrency": "USD",
+          "price": "380"
+        },
+        {
+          "@type": "Offer",
+          "name": "Plan Integral",
+          "description": "Administración IT completa, atención prioritaria y visitas preventivas semanales.",
+          "priceCurrency": "USD",
+          "price": "790"
+        }
+      ]
+    }
+  }
+  </script>
 </head>
 <body>
-<div class="hero" id="inicio">
-<header class="wrap">
-<a class="logo" href="#inicio" aria-label="SAMANDTECH, inicio">
-</a>
-<button class="menu" aria-expanded="false" aria-controls="navigation" aria-label="Abrir menú">☰</button>
-<nav id="navigation">
-<a href="#inicio">Inicio</a>
-<a href="#nosotros">Nosotros</a>
-<a href="#servicios">Servicios</a>
-<a href="#planes">Planes</a>
-<a class="nav-contact" href="#contacto">Hablemos ↗</a>
-</nav>
-</header>
-<main class="wrap hero-main">
-<div>
-<div class="eyebrow">Soluciones informáticas a tu alcance</div>
-<h1>Tu tecnología.<br>Sin complicaciones.<br>
-<span>Con SAMANDTECH.</span>
-</h1>
-<p class="lead">Conectamos, protegemos y cuidamos tu infraestructura. Soluciones IT y seguridad electrónica para que tu negocio siga adelante.</p>
-<div class="actions">
-<a class="button" href="#servicios">Explorar servicios <span>↗</span>
-</a>
-<a class="button secondary" href="#contacto">Cuéntanos qué necesitas <span>→</span>
-</a>
-</div>
-<div class="small-note">Redes · Servidores · Datos · Seguridad</div>
-</div>
-<div class="visual" aria-hidden="true">
-<div class="orbit">
-</div>
-<div class="orbit two">
-</div>
-<div class="device">
-<div class="screen">
-<div class="screen-inner">
-<svg class="symbol" viewBox="0 0 110 140">
-<path d="M12 25Q55-12 98 25M25 43Q55 17 85 43M39 60Q55 45 71 60"/>
-<circle cx="55" cy="77" r="5" fill="#11c6ea"/>
-<path d="M4 88H30L48 104V140M106 88H80L62 104V140"/>
-</svg>
-</div>
-</div>
-<div class="stand">
-</div>
-<div class="base">
-</div>
-</div>
-<div class="float one">
-<strong>
-<i>⌘</i> Soporte técnico</strong>Tu infraestructura, bajo control</div>
-<div class="float two">
-<strong>
-<i>◎</i> Conectamos tu mundo</strong>Redes · Datos · Seguridad</div>
-</div>
-</main>
-<div class="wrap hero-bottom">
-<span>TECNOLOGÍA CON PROPÓSITO. ATENCIÓN CERCANA.</span>
-<a href="#nosotros">DESCUBRE SAMANDTECH ↓</a>
-</div>
-</div>
-<section id="nosotros">
-<div class="wrap about">
-<div>
-<div class="eyebrow">01 / Nosotros</div>
-<h2>La tecnología avanza.<br>Avancemos contigo.</h2>
-</div>
-<div>
-<p>Somos SAMANDTECH. Nacemos para acercar soluciones informáticas y de seguridad electrónica a personas y negocios que necesitan una tecnología confiable y fácil de gestionar.</p>
-<p>Integramos soporte técnico, redes, servidores, protección de datos y monitoreo personalizado. Escuchamos tu necesidad, evaluamos tu entorno y proponemos una solución que puedas entender y aprovechar.</p>
-<div class="values">
-<div class="value">
-<span>↗</span>
-<h3>Soluciones a tu medida</h3>
-<p>Cada necesidad merece una respuesta práctica.</p>
-</div>
-<div class="value">
-<span>◎</span>
-<h3>Atención cercana</h3>
-<p>Hablamos tu idioma, sin complicaciones.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
+  <!-- Enlace de salto directo para navegación por teclado -->
+  <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
 
-<section class="services" id="servicios">
-<div class="wrap">
-<div class="section-head">
-<div>
-<div class="eyebrow">02 / Servicios</div>
-<h2>Un aliado para<br>cada reto digital.</h2>
-</div>
-<p>Infraestructura conectada, equipos operativos y datos protegidos. Un enfoque integral para las necesidades de tu entorno tecnológico.</p>
-</div>
-<div class="service-list">
-</div>
-</div>
-</section>
+  <!-- HERO -->
+  <div class="hero" id="inicio">
+    <div class="wrap" style="height:100%">
+      <header>
+        <a class="logo" href="#inicio" aria-label="SAMANDTECH - Ir al inicio">
+          <img src="assets/logo-dark.svg" alt="SAMANDTECH" width="218" height="62" fetchpriority="high">
+        </a>
 
-<section class="plans" id="planes">
-<div class="wrap">
-<div class="section-head">
-<div>
-<div class="eyebrow">03 / Planes</div>
-<h2>Elige cómo quieres<br>que te acompañemos.</h2>
-</div>
-<p>Tres niveles de atención para ajustar el soporte y la gestión tecnológica a tu operación.</p>
-</div>
-<div class="plan-grid">
+        <button class="menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="primary-nav">☰</button>
 
-    <article class="plan">
-<div class="plan-label">LO ESENCIAL</div>
-<h3>Básico</h3>
-<p>Para cuidar tu entorno y atender las necesidades cotidianas.</p>
-<ul>
-<li>Soporte técnico remoto</li>
-<li>Mantenimiento preventivo básico</li>
-<li>Monitoreo y alertas esenciales</li>
-<li>Gestión básica de respaldos</li>
-<li>Administración básica de red</li>
-</ul>
-<div class="plan-detail">No incluye reemplazos de equipos.</div>
-<a href="#contacto" class="plan-link">Consultar plan Básico <span>↗</span>
-</a>
-</article>
+        <nav id="primary-nav" aria-label="Navegación principal">
+          <a href="#inicio">Inicio</a>
+          <a href="#nosotros">Nosotros</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#planes">Planes</a>
+          <a href="#contacto" class="nav-contact">Hablemos</a>
+        </nav>
+      </header>
 
-<article class="plan featured">
-<div class="plan-label">UN PASO MÁS</div>
-<h3>Avanzado</h3>
-<p>Para entornos que necesitan mayor seguimiento y atención en sitio.</p>
-<ul>
-<li>Soporte remoto y visitas limitadas en horario de oficina</li>
-<li>Mantenimiento avanzado</li>
-<li>Monitoreo activo y diagnóstico predictivo con IA</li>
-<li>Respaldos locales o en la nube</li>
-<li>Administración completa de red</li>
-<li>Sustitución de componentes según condiciones</li>
-</ul>
-<div class="plan-detail">Visitas y componentes sujetos al alcance contratado.</div>
-<a href="#contacto" class="plan-link">Consultar plan Avanzado <span>↗</span>
-</a>
-</article>
+      <div class="hero-main">
+        <div>
+          <div class="eyebrow">Soluciones tecnológicas</div>
+          <h1>Tecnología que funciona <span>para ti.</span></h1>
+          <p class="lead">En SAMANDTECH diseñamos, administramos y damos soporte a la infraestructura tecnológica de tu empresa para que opere con estabilidad.</p>
+          <div class="actions">
+            <a class="button" href="#contacto" data-preset="Diagnóstico inicial">Solicitar diagnóstico <span aria-hidden="true">→</span></a>
+            <a class="button secondary" href="#servicios">Ver servicios</a>
+          </div>
+          <div class="small-note">Atención remota y presencial · Propuestas a la medida de cada empresa</div>
+        </div>
 
-<article class="plan">
-<div class="plan-label">GESTIÓN INTEGRAL</div>
-<h3>Integral</h3>
-<p>Para operaciones con infraestructura y servicios críticos.</p>
-<ul>
-<li>Soporte sin límite de solicitudes y atención prioritaria según SLA</li>
-<li>Mantenimiento integral</li>
-<li>Automatización, IA y reportes ejecutivos</li>
-<li>Ciberseguridad y respaldo híbrido</li>
-<li>Gestión de redes, nube y servicios críticos</li>
-<li>Reemplazos prioritarios según contrato</li>
-</ul>
-<div class="plan-detail">Cobertura y tiempos definidos en el acuerdo de servicio.</div>
-<a href="#contacto" class="plan-link">Consultar plan Integral <span>↗</span>
-</a>
-</article>
-</div>
-<p class="plan-note">Planes sujetos a evaluación técnica. Precio, horarios, visitas, licencias, equipos y tiempos de respuesta se detallan en cada propuesta. Las funciones de IA y automatización dependen de la solución contratada.</p>
-</div>
-</section>
+        <div class="visual" aria-hidden="true">
+          <div class="orbit"></div>
+          <div class="orbit two"></div>
+          <div class="device">
+            <div class="screen">
+              <div class="screen-inner">
+                <img class="symbol" src="assets/isotipo.svg" alt="" width="96" height="116" decoding="async">
+              </div>
+            </div>
+            <div class="stand"></div>
+            <div class="base"></div>
+          </div>
+          <div class="float one">
+            <strong>Infraestructura</strong>
+            <i>●</i> Redes, servidores y respaldo
+          </div>
+          <div class="float two">
+            <strong>Soporte directo</strong>
+            <i>●</i> Diagnóstico y seguimiento claro
+          </div>
+        </div>
+      </div>
 
-<section class="process">
-<div class="wrap">
-<div class="eyebrow">Así trabajamos</div>
-<h2>Del problema a la solución,<br>con claridad en cada paso.</h2>
-<div class="steps">
-<div>
-<span>01</span>
-<h3>Te escuchamos</h3>
-<p>Nos cuentas qué necesitas y cómo funciona tu operación.</p>
-</div>
-<div>
-<span>02</span>
-<h3>Evaluamos y proponemos</h3>
-<p>Revisamos tu entorno y definimos alcance, prioridades y condiciones.</p>
-</div>
-<div>
-<span>03</span>
-<h3>Implementamos</h3>
-<p>Configuramos la solución y comprobamos su funcionamiento.</p>
-</div>
-<div>
-<span>04</span>
-<h3>Te acompañamos</h3>
-<p>Damos seguimiento y soporte según el servicio o plan acordado.</p>
-</div>
-</div>
-</div>
-</section>
+      <div class="hero-bottom">
+        <span>SOPORTE TÉCNICO · REDES · SERVIDORES · MONITOREO</span>
+        <a href="#nosotros">EXPLORAR ↓</a>
+      </div>
+    </div>
+  </div>
 
-<section class="clients" id="clientes">
-<div class="wrap">
-<div class="eyebrow">04 / Confianza</div>
-<h2>Quiénes han confiado<br>en nosotros.</h2>
-<div class="client-empty">
-<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-<path d="M3 21V7l9-4 9 4v14 M8 10h1 M15 10h1 M8 14h1 M15 14h1 M10 21v-4h4v4"/>
-</svg>
-<p>Próximamente compartiremos aquí los clientes y proyectos que nos autorizan a mostrar su experiencia con SAMANDTECH.</p>
-</div>
-</div>
-</section>
-<section class="contact">
-<div class="wrap">
-<div>
-<h2>¿La tecnología te está<br>frenando? Hablemos.</h2>
-<p>Cuéntanos qué necesitas y demos el primer paso hacia una solución.</p>
-</div>
-<a class="button" href="#contacto">Ver contactos <span>↗</span>
-</a>
-</div>
-</section>
+  <!-- CONTENIDO PRINCIPAL -->
+  <main id="contenido-principal" tabindex="-1">
+    <!-- NOSOTROS -->
+    <section id="nosotros" aria-labelledby="heading-nosotros">
+      <div class="wrap about">
+        <div>
+          <div class="eyebrow">Nosotros</div>
+          <h2 id="heading-nosotros">Un aliado técnico cercano y confiable.</h2>
+        </div>
+        <div>
+          <p>SAMANDTECH nace con el objetivo de ofrecer servicios tecnológicos claros, responsables y adaptados a la realidad operativa de cada empresa. Trabajamos como soporte técnico externo o complemento para áreas internas que necesitan respaldo especializado.</p>
+          <div class="values">
+            <div class="value">
+              <span aria-hidden="true">01</span>
+              <h3>Claridad técnica</h3>
+              <p>Explicamos cada diagnóstico, alcance y recomendación en lenguaje directo.</p>
+            </div>
+            <div class="value">
+              <span aria-hidden="true">02</span>
+              <h3>Continuidad</h3>
+              <p>Priorizamos prevención, respaldo y estabilidad para evitar interrupciones.</p>
+            </div>
+            <div class="value">
+              <span aria-hidden="true">03</span>
+              <h3>A la medida</h3>
+              <p>Cada proyecto y plan se ajusta al tamaño real y presupuesto de tu operación.</p>
+            </div>
+            <div class="value">
+              <span aria-hidden="true">04</span>
+              <h3>Compromiso</h3>
+              <p>Acompañamiento constante desde la implementación hasta el soporte diario.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- SERVICIOS -->
+    <section class="services" id="servicios" aria-labelledby="heading-servicios">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Servicios</div>
+            <h2 id="heading-servicios">Lo que hacemos</h2>
+          </div>
+          <p>Cubrimos las áreas clave de infraestructura, soporte, seguridad física y monitoreo que mantienen tu operación andando.</p>
+        </div>
+        <div class="service-list"></div>
+      </div>
+    </section>
 
+    <!-- PLANES -->
+    <section class="plans" id="planes" aria-labelledby="heading-planes">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Planes MSP</div>
+            <h2 id="heading-planes">Planes de mantenimiento</h2>
+          </div>
+          <p>Tres niveles de atención mensual diseñados para crecer con tu empresa. Selecciona la cobertura operativa adecuada o solicita una cotización a la medida.</p>
+        </div>
 
-<footer id="contacto">
-<div class="wrap">
-<div class="footer-grid">
-<div class="footer-brand">
-<a class="logo" href="#inicio" aria-label="SAMANDTECH, inicio">
-</a>
-<p>Soluciones informáticas para conectar, trabajar y avanzar.</p>
-</div>
-<div>
-<h3>EXPLORA</h3>
-<a href="#inicio">Inicio</a>
-<a href="#nosotros">Nosotros</a>
-<a href="#servicios">Servicios</a>
-</div>
-<div>
-<h3>CONTACTO</h3>
+        <div class="plan-grid">
+          <!-- PLAN BÁSICO -->
+          <article class="plan" aria-labelledby="plan-basico">
+            <div class="plan-top">
+              <span class="plan-label">Plan Básico</span>
+              <span class="plan-scale">1 a 10 equipos</span>
+            </div>
+            <h3 id="plan-basico">Básico</h3>
+            <p class="plan-profile">Para comercios, oficinas pequeñas y despachos que buscan soporte continuo sin complejidad.</p>
 
-<div class="pending">
-<strong>WhatsApp · Por confirmar</strong>
-<strong>Correo · Por confirmar</strong>
-<strong>Instagram · Por confirmar</strong>Datos de contacto pendientes de incorporación.</div>
-</div>
-</div>
+            <div class="plan-price">
+              <div class="price-amount">USD 190 <span>/ mes</span></div>
+              <div class="price-extra">+ USD 15 / equipo adicional</div>
+            </div>
 
+            <dl class="plan-metrics">
+              <div>
+                <dt>Horario y SLA</dt>
+                <dd>Lun – Vie · 8:00 a. m. – 5:00 p. m. · Respuesta ≤ 4 h</dd>
+              </div>
+              <div>
+                <dt>Visitas incluidas</dt>
+                <dd>1 visita preventiva mensual</dd>
+              </div>
+            </dl>
 
-<div class="footer-bottom">
-<span>© <span id="year">
-</span> SAMANDTECH</span>
-<span>Tecnología sencilla. Posibilidades grandes.</span>
-</div>
-</div>
-</footer>
-<script src="js/script.js" defer>
-</script>
+            <ul>
+              <li>Soporte remoto de incidencias</li>
+              <li>Mantenimiento preventivo programado</li>
+              <li>Administración básica de red y Wi-Fi</li>
+              <li>Verificación mensual de respaldos</li>
+              <li>Informe ejecutivo mensual</li>
+            </ul>
+
+            <p class="plan-detail">Ideal para operaciones de 1 a 10 equipos. Emergencias fuera de horario o visitas urgentes se atienden bajo tarifa preferencial.</p>
+            <a class="plan-link" href="#contacto" data-preset="Plan Básico (USD 190/mes)">Consultar plan Básico <span aria-hidden="true">→</span></a>
+          </article>
+
+          <!-- PLAN AVANZADO -->
+          <article class="plan featured" aria-labelledby="plan-avanzado">
+            <div class="plan-top">
+              <span class="plan-label">Más elegido</span>
+              <span class="plan-scale">11 a 25 equipos</span>
+            </div>
+            <h3 id="plan-avanzado">Avanzado</h3>
+            <p class="plan-profile">Para pymes con operación diaria continua que requieren gestión proactiva, monitoreo y prioridad.</p>
+
+            <div class="plan-price">
+              <div class="price-amount">USD 380 <span>/ mes</span></div>
+              <div class="price-extra">+ USD 13 / equipo adicional</div>
+            </div>
+
+            <dl class="plan-metrics">
+              <div>
+                <dt>Horario y SLA</dt>
+                <dd>Lun – Sáb · 7:00 a. m. – 8:00 p. m. · Respuesta ≤ 2 h</dd>
+              </div>
+              <div>
+                <dt>Visitas incluidas</dt>
+                <dd>2 visitas preventivas al mes + 2 emergencias incluidas</dd>
+              </div>
+            </dl>
+
+            <ul>
+              <li>Todo lo incluido en el Plan Básico</li>
+              <li>Monitoreo continuo de servidores y red</li>
+              <li>Gestión de respaldos y pruebas de restauración</li>
+              <li>Administración de usuarios, correos y accesos</li>
+              <li>Inventario técnico actualizado y reportes detallados</li>
+            </ul>
+
+            <p class="plan-detail">Pensado para empresas de 11 a 25 equipos con alta dependencia operativa. Incluye soporte remoto prioritario en horario extendido.</p>
+            <a class="plan-link" href="#contacto" data-preset="Plan Avanzado (USD 380/mes)">Consultar plan Avanzado <span aria-hidden="true">→</span></a>
+          </article>
+
+          <!-- PLAN INTEGRAL -->
+          <article class="plan enterprise" aria-labelledby="plan-integral">
+            <div class="plan-top">
+              <span class="plan-label">Plan Integral</span>
+              <span class="plan-scale">Más de 25 equipos</span>
+            </div>
+            <h3 id="plan-integral">Integral</h3>
+            <p class="plan-profile">Para empresas consolidadas, clínicas o multi-sede que requieren administración IT completa y respaldo continuo.</p>
+
+            <div class="plan-price">
+              <div class="price-amount">USD 790 <span>/ mes</span></div>
+              <div class="price-extra">+ USD 11 / equipo adicional · A medida según sedes</div>
+            </div>
+
+            <dl class="plan-metrics">
+              <div>
+                <dt>Horario y SLA</dt>
+                <dd>24/7 para críticos · Respuesta ≤ 1 h</dd>
+              </div>
+              <div>
+                <dt>Visitas incluidas</dt>
+                <dd>Visitas semanales programadas + emergencias ilimitadas</dd>
+              </div>
+            </dl>
+
+            <ul>
+              <li>Todo lo incluido en el Plan Avanzado</li>
+              <li>Monitoreo personalizado con alertas automáticas</li>
+              <li>Administración integral de servidores y virtualización</li>
+              <li>Gestión de seguridad perimetral, CCTV y acceso biométrico</li>
+              <li>Consultoría de mejora continua y planificación de capacidad</li>
+            </ul>
+
+            <p class="plan-detail">Cobertura dedicada para infraestructuras críticas o más de 25 equipos. El alcance exacto se ajusta tras levantamiento técnico.</p>
+            <a class="plan-link" href="#contacto" data-preset="Plan Integral (USD 790/mes)">Consultar plan Integral <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+
+        <!-- TABLA COMPARATIVA DE PLANES -->
+        <div class="plan-compare">
+          <div class="plan-compare-head">
+            <div>
+              <h3>Comparativa detallada de planes</h3>
+              <p>Evalúa el alcance operativo, tiempos de respuesta y servicios incluidos en cada nivel de cobertura.</p>
+            </div>
+            <div class="plan-legend" aria-hidden="true">
+              <span><i class="cmp-dot is-yes">✓</i> Incluido</span>
+              <span><i class="cmp-dot is-cond">◐</i> Según alcance</span>
+              <span><i class="cmp-dot is-no">—</i> No incluido</span>
+            </div>
+          </div>
+
+          <div class="plan-compare-scroll" role="region" aria-label="Tabla comparativa de planes MSP" tabindex="0">
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th scope="col">Características</th>
+                  <th scope="col">
+                    <span class="th-plan">Básico</span>
+                    <small>USD 190/mes · 1–10 eq.</small>
+                  </th>
+                  <th scope="col" class="th-featured">
+                    <span class="th-plan">Avanzado</span>
+                    <small>USD 380/mes · 11–25 eq.</small>
+                  </th>
+                  <th scope="col" class="th-enterprise">
+                    <span class="th-plan">Integral</span>
+                    <small>USD 790/mes · +25 eq.</small>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Equipos incluidos en base</th>
+                  <td>Hasta 10 equipos <span class="cmp-note">+$15 por equipo extra</span></td>
+                  <td class="col-featured">Hasta 25 equipos <span class="cmp-note">+$13 por equipo extra</span></td>
+                  <td>Desde 26 equipos <span class="cmp-note">+$11 por equipo extra</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Horario de atención</th>
+                  <td>Lun – Vie · 8:00 a. m. – 5:00 p. m.</td>
+                  <td class="col-featured">Lun – Sáb · 7:00 a. m. – 8:00 p. m.</td>
+                  <td>24/7 para servicios críticos</td>
+                </tr>
+                <tr>
+                  <th scope="row">Tiempo máximo de respuesta (SLA)</th>
+                  <td>≤ 4 horas hábiles</td>
+                  <td class="col-featured">≤ 2 horas</td>
+                  <td>≤ 1 hora</td>
+                </tr>
+                <tr>
+                  <th scope="row">Visitas preventivas en sitio</th>
+                  <td>1 visita al mes</td>
+                  <td class="col-featured">2 visitas al mes</td>
+                  <td>4 visitas al mes (semanal)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Visitas por emergencia</th>
+                  <td><span class="cmp-status is-cond"><i>◐</i> Bajo tarifa preferencial</span></td>
+                  <td class="col-featured"><span class="cmp-status is-yes"><i>✓</i> 2 incluidas al mes</span></td>
+                  <td><span class="cmp-status is-yes"><i>✓</i> Ilimitadas</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Soporte remoto y mesa de ayuda</th>
+                  <td><span class="cmp-status is-yes"><i>✓</i> Incluido</span></td>
+                  <td class="col-featured"><span class="cmp-status is-yes"><i>✓</i> Prioritario</span></td>
+                  <td><span class="cmp-status is-yes"><i>✓</i> Dedicado</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Administración de red y Wi-Fi</th>
+                  <td><span class="cmp-status is-yes"><i>✓</i> Configuración básica</span></td>
+                  <td class="col-featured"><span class="cmp-status is-yes"><i>✓</i> Gestión proactiva</span></td>
+                  <td><span class="cmp-status is-yes"><i>✓</i> Gestión integral + VLAN/VPN</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Respaldos y bases de datos</th>
+                  <td><span class="cmp-status is-yes"><i>✓</i> Verificación mensual</span></td>
+                  <td class="col-featured"><span class="cmp-status is-yes"><i>✓</i> Gestión + pruebas de restauración</span></td>
+                  <td><span class="cmp-status is-yes"><i>✓</i> Automatizado + continuidad</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Monitoreo continuo y alertas</th>
+                  <td><span class="cmp-status is-no"><i>—</i> No incluido</span></td>
+                  <td class="col-featured"><span class="cmp-status is-yes"><i>✓</i> Servidores y enlaces</span></td>
+                  <td><span class="cmp-status is-yes"><i>✓</i> Personalizado + automatización</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Gestión de usuarios y accesos</th>
+                  <td><span class="cmp-status is-cond"><i>◐</i> Altas y bajas puntuales</span></td>
+                  <td class="col-featured"><span class="cmp-status is-yes"><i>✓</i> Correos, dominios y permisos</span></td>
+                  <td><span class="cmp-status is-yes"><i>✓</i> Control integral y políticas</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Soporte CCTV y acceso biométrico</th>
+                  <td><span class="cmp-status is-no"><i>—</i> Por proyecto</span></td>
+                  <td class="col-featured"><span class="cmp-status is-cond"><i>◐</i> Revisión operativa básica</span></td>
+                  <td><span class="cmp-status is-yes"><i>✓</i> Administración y mantenimiento</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Inventario técnico e informes</th>
+                  <td><span class="cmp-status is-yes"><i>✓</i> Resumen ejecutivo mensual</span></td>
+                  <td class="col-featured"><span class="cmp-status is-yes"><i>✓</i> Inventario + métricas detalladas</span></td>
+                  <td><span class="cmp-status is-yes"><i>✓</i> Auditoría continua y roadmap</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <p class="plan-note">Tarifas expresadas en USD como referencia mensual. El valor final puede ajustarse según cantidad de sedes, complejidad de servidores o requerimientos específicos tras el diagnóstico inicial. Todos los planes operan bajo acuerdo de nivel de servicio (SLA) definido antes de iniciar.</p>
+      </div>
+    </section>
+
+    <!-- CÓMO TRABAJAMOS -->
+    <section class="process" id="proceso" aria-labelledby="heading-proceso">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Cómo trabajamos</div>
+            <h2 id="heading-proceso">Proceso ordenado desde el primer contacto.</h2>
+          </div>
+          <p>Un flujo claro de trabajo permite diagnosticar correctamente, cotizar sin ambigüedades y mantener control de cada intervención.</p>
+        </div>
+
+        <div class="steps">
+          <div>
+            <span>PASO 01</span>
+            <h3>Diagnóstico</h3>
+            <p>Levantamos el estado actual de tus equipos, redes, respaldos y necesidades operativas.</p>
+          </div>
+          <div>
+            <span>PASO 02</span>
+            <h3>Propuesta clara</h3>
+            <p>Definimos alcance, tiempos, recomendaciones y modalidad de servicio o proyecto.</p>
+          </div>
+          <div>
+            <span>PASO 03</span>
+            <h3>Ejecución</h3>
+            <p>Implementamos mejoras, configuraciones o mantenimiento con mínimo impacto operativo.</p>
+          </div>
+          <div>
+            <span>PASO 04</span>
+            <h3>Seguimiento</h3>
+            <p>Documentamos lo realizado y mantenemos monitoreo o soporte según lo acordado.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIENTES -->
+    <section class="clients" id="clientes" aria-labelledby="heading-clientes">
+      <div class="wrap">
+        <div class="eyebrow">Confianza y trayectoria</div>
+        <h2 id="heading-clientes">Construyendo relaciones técnicas a largo plazo.</h2>
+        <div class="client-empty">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7l7-4z M9 12l2 2 4-4"/>
+          </svg>
+          <p>Esta sección está preparada para incorporar los logotipos y casos de éxito de las empresas que confían en SAMANDTECH conforme autoricen su publicación.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO & SOLICITUD DE DIAGNÓSTICO (MAQUETA VISUAL) -->
+    <section class="contact" id="contacto" aria-labelledby="heading-contacto">
+      <div class="wrap contact-grid">
+        <!-- Columna Izquierda: Propuesta de conversación + Espacios para canales oficiales -->
+        <div class="contact-info">
+          <div class="eyebrow">Hablemos de tu operación</div>
+          <h2 id="heading-contacto">Inicia una conversación técnica con nuestro equipo.</h2>
+          <p class="contact-lead">
+            Solicita información, asesoría o un diagnóstico inicial de tu infraestructura tecnológica. Evaluamos el estado de tus equipos, redes y respaldos para entregarte una recomendación clara y ajustada a tu empresa.
+          </p>
+
+          <ul class="contact-pillars">
+            <li>Diagnóstico inicial para dimensionar tu entorno real sin compromisos.</li>
+            <li>Alcance definido por plan mensual (MSP) o proyecto puntual.</li>
+            <li>Cobertura remota y atención presencial según requerimiento.</li>
+          </ul>
+
+          <!-- Espacios visuales reservados para futuros canales oficiales -->
+          <div class="contact-channels" aria-label="Canales de atención corporativa">
+            <div class="channels-header">
+              <span class="channels-title">Canales directos de atención</span>
+              <span class="channels-badge">Próximamente</span>
+            </div>
+
+            <div class="channel-grid">
+              <div class="channel-slot">
+                <div class="channel-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" class="icon">
+                    <path d="M4 6h16v12H4z M4 7l8 6 8-6"/>
+                  </svg>
+                </div>
+                <div class="channel-meta">
+                  <span class="channel-label">Correo corporativo</span>
+                  <span class="channel-placeholder">Canal oficial en configuración</span>
+                </div>
+              </div>
+
+              <div class="channel-slot">
+                <div class="channel-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" class="icon">
+                    <path d="M21 11.5a8.5 8.5 0 0 1-12.5 7.5L3 20.5l1.5-5.5A8.5 8.5 0 1 1 21 11.5z"/>
+                  </svg>
+                </div>
+                <div class="channel-meta">
+                  <span class="channel-label">WhatsApp empresarial</span>
+                  <span class="channel-placeholder">Línea comercial por habilitar</span>
+                </div>
+              </div>
+
+              <div class="channel-slot">
+                <div class="channel-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" class="icon">
+                    <path d="M12 21s-6-5.3-6-10a6 6 0 1 1 12 0c0 4.7-6 10-6 10z M12 11m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"/>
+                  </svg>
+                </div>
+                <div class="channel-meta">
+                  <span class="channel-label">Cobertura operativa</span>
+                  <span class="channel-placeholder">Atención remota y visitas en sitio</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna Derecha: Maqueta visual del formulario de diagnóstico -->
+        <div class="contact-card">
+          <div class="contact-card-head">
+            <div>
+              <h3>Solicitud de diagnóstico</h3>
+              <p>Completa los datos referenciales de tu empresa.</p>
+            </div>
+            <span class="preview-pill" title="Vista previa de interfaz">Vista previa UI</span>
+          </div>
+
+          <form class="contact-form" action="#" method="post" onsubmit="return false;" aria-describedby="form-preview-note">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="lead-name">Nombre y apellido</label>
+                <input id="lead-name" name="name" type="text" autocomplete="name" placeholder="Ej. Carlos Mendoza">
+              </div>
+
+              <div class="form-field">
+                <label for="lead-company">Empresa</label>
+                <input id="lead-company" name="company" type="text" autocomplete="organization" placeholder="Nombre de tu organización">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="lead-email">Correo electrónico</label>
+                <input id="lead-email" name="email" type="email" autocomplete="email" placeholder="nombre@empresa.com">
+              </div>
+
+              <div class="form-field">
+                <label for="lead-phone">Teléfono o WhatsApp</label>
+                <input id="lead-phone" name="phone" type="tel" autocomplete="tel" placeholder="Código de área y número">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="lead-devices">Cantidad aproximada de equipos</label>
+                <select id="lead-devices" name="devices">
+                  <option value="" selected disabled>Selecciona un rango</option>
+                  <option value="1-10">1 a 10 equipos</option>
+                  <option value="11-25">11 a 25 equipos</option>
+                  <option value="26+">Más de 25 equipos</option>
+                  <option value="proyecto">Proyecto puntual / Por definir</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="lead-interest">Servicio o plan de interés</label>
+                <select id="lead-interest" name="interest">
+                  <option value="" selected disabled>Selecciona una opción</option>
+                  <option value="diagnostico">Diagnóstico general de infraestructura</option>
+                  <optgroup label="Planes Mensuales MSP">
+                    <option value="Plan Básico (USD 190/mes)">Plan Básico (USD 190/mes)</option>
+                    <option value="Plan Avanzado (USD 380/mes)">Plan Avanzado (USD 380/mes)</option>
+                    <option value="Plan Integral (USD 790/mes)">Plan Integral (USD 790/mes)</option>
+                  </optgroup>
+                  <optgroup label="Servicios Especializados">
+                    <option value="Redes y conectividad">Redes y conectividad</option>
+                    <option value="Servidores e infraestructura">Servidores e infraestructura</option>
+                    <option value="Estaciones de trabajo">Estaciones de trabajo</option>
+                    <option value="Respaldos y bases de datos">Respaldos y bases de datos</option>
+                    <option value="CCTV y acceso biométrico">CCTV y acceso biométrico</option>
+                    <option value="Monitoreo personalizado">Monitoreo personalizado</option>
+                  </optgroup>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="lead-notes">
+                Mensaje adicional <span class="label-optional">(opcional)</span>
+              </label>
+              <textarea id="lead-notes" name="notes" rows="3" placeholder="Describe brevemente tu requerimiento, horarios preferidos o situación actual..."></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="button" class="button form-submit" aria-disabled="true">
+                <span>Solicitar diagnóstico</span>
+                <span aria-hidden="true">→</span>
+              </button>
+
+              <p id="form-preview-note" class="form-preview-note">
+                <span class="note-dot" aria-hidden="true"></span>
+                Maqueta visual en fase de diseño: el envío automático se habilitará al conectar los canales oficiales de recepción.
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="footer-contacto">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" href="#inicio" aria-label="SAMANDTECH - Volver al inicio">
+            <img src="assets/logo-dark.svg" alt="SAMANDTECH" width="204" height="58" loading="lazy" decoding="async">
+          </a>
+          <p>Servicios de soporte técnico, infraestructura, seguridad electrónica y monitoreo para empresas.</p>
+        </div>
+
+        <div>
+          <h3>EXPLORA</h3>
+          <a href="#nosotros">Nosotros</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#planes">Planes</a>
+          <a href="#proceso">Cómo trabajamos</a>
+          <a href="#contacto">Solicitar diagnóstico</a>
+        </div>
+
+        <div>
+          <h3>ATENCIÓN</h3>
+          <div class="pending">
+            <strong>Atención comercial y técnica</strong>
+            Modalidad remota y presencial<br>
+            Propuestas a la medida de cada empresa
+            <a href="#contacto" class="footer-cta-link">Ir al formulario de contacto →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> SAMANDTECH. Todos los derechos reservados.</span>
+        <span>Soporte técnico e infraestructura IT</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js" defer></script>
 </body>
 </html>

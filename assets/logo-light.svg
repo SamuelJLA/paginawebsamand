@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 945 270" role="img" aria-labelledby="samandtech-light-title">
+  <title id="samandtech-light-title">SAMANDTECH</title>
+  <defs>
+    <linearGradient id="samand-grad-light" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#11C6EA" />
+      <stop offset="55%" stop-color="#0BA7B3" />
+      <stop offset="100%" stop-color="#00877D" />
+    </linearGradient>
+  </defs>
+
+  
+  <g fill="url(#samand-grad-light)">
+    <path d="M 594 38 A 72 72 0 0 1 686 38 L 676 49 A 57 57 0 0 0 604 49 Z" />
+    <path d="M 608 54 A 50 50 0 0 1 672 54 L 662 65 A 36 36 0 0 0 618 65 Z" />
+    <path d="M 622 70 A 28 28 0 0 1 658 70 L 648 80 A 15 15 0 0 0 632 80 Z" />
+    <circle cx="640" cy="96" r="7.5" />
+    <path d="M 561 108 H 612 Q 634 108 634 130 V 214 H 624 V 131 Q 624 119 611 119 H 572 Z" />
+    <path d="M 719 108 H 668 Q 646 108 646 130 V 214 H 656 V 131 Q 656 119 669 119 H 708 Z" />
+  </g>
+
+  
+  <g fill="#1E2937">
+    
+    <path d="M 54 140 H 112 V 153 H 62 Q 52 153 52 162 V 163 Q 52 171 62 171 H 96 Q 114 171 114 189 V 195 Q 114 214 95 214 H 38 V 201 H 93 Q 101 201 101 193 V 190 Q 101 183 93 183 H 58 Q 39 183 39 165 V 160 Q 39 140 54 140 Z" />
+    
+    <path d="M 164 140 H 178 L 218 214 H 203 L 194 196 H 148 L 139 214 H 124 L 164 140 Z M 171 155 L 154 184 H 188 L 171 155 Z" />
+    
+    <path d="M 230 140 H 246 L 276 192 L 306 140 H 322 V 214 H 309 V 160 L 281 208 H 271 L 243 160 V 214 H 230 V 140 Z" />
+    
+    <path d="M 374 140 H 388 L 428 214 H 413 L 404 196 H 358 L 349 214 H 334 L 374 140 Z M 381 155 L 364 184 H 398 L 381 155 Z" />
+    
+    <path d="M 440 140 H 455 L 502 195 V 140 H 515 V 214 H 501 L 453 158 V 214 H 440 V 140 Z" />
+    
+    <path fill-rule="evenodd" d="M 532 140 H 584 Q 608 140 608 164 V 190 Q 608 214 584 214 H 532 V 140 Z M 545 153 V 201 H 582 Q 595 201 595 188 V 166 Q 595 153 582 153 H 545 Z" />
+    
+    <path d="M 699 140 H 759 V 153 H 702 Q 691 153 691 164 V 171 H 753 V 183 H 691 V 190 Q 691 201 702 201 H 759 V 214 H 699 Q 678 214 678 192 V 162 Q 678 140 699 140 Z" />
+    
+    <path d="M 793 140 H 847 V 153 H 796 Q 785 153 785 164 V 190 Q 785 201 796 201 H 847 V 214 H 793 Q 772 214 772 192 V 162 Q 772 140 793 140 Z" />
+    
+    <path d="M 861 140 H 874 V 170 H 920 V 140 H 933 V 214 H 920 V 183 H 874 V 214 H 861 V 140 Z" />
+  </g>
+</svg>
