@@ -6,7 +6,7 @@
 
   <!-- SEO Básico & Meta Description -->
   <title>SAMANDTECH | Soporte Técnico IT, Infraestructura y Servicios Gestionados</title>
-  <meta name="description" content="Servicios gestionados de tecnología (MSP), soporte técnico empresarial, redes, servidores, respaldos y monitoreo personalizado. Planes escalables con atención remota y presencial.">
+  <meta name="description" content="Servicios gestionados de tecnología (MSP), soporte técnico empresarial, redes, servidores, monitoreo proactivo de infraestructura y sistema propio de inventario y topología.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#1e2937">
 
@@ -15,17 +15,28 @@
   <meta property="og:site_name" content="SAMANDTECH">
   <meta property="og:locale" content="es_ES">
   <meta property="og:title" content="SAMANDTECH | Soporte Técnico IT y Servicios Gestionados">
-  <meta property="og:description" content="Soporte técnico, administración de infraestructura IT, redes, respaldos y planes mensuales adaptados a tu operación.">
+  <meta property="og:description" content="Soporte técnico, administración de infraestructura IT, monitoreo proactivo, inventario inteligente y planes mensuales adaptados a tu operación.">
   <meta property="og:image" content="assets/isotipo.svg">
 
-  <!-- Favicon (usando el asset vectorial oficial existente) -->
+  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/isotipo.svg">
   <link rel="apple-touch-icon" href="assets/isotipo.svg">
 
-  <!-- Optimización de carga de fuentes y hoja de estilos -->
+  <!-- Fuentes y Tailwind CSS v4 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-samand-navy: #1E2937;
+      --color-samand-cyan: #11C6EA;
+      --color-samand-teal: #00877D;
+      --color-samand-teal-text: #006E66;
+      --color-samand-muted: #5A6A76;
+      --color-samand-slate: #546974;
+    }
+  </style>
   <link rel="stylesheet" href="css/styles.css">
 
   <!-- Datos Estructurados Schema.org -->
@@ -34,16 +45,17 @@
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "SAMANDTECH",
-    "description": "Soluciones tecnológicas y servicios gestionados (MSP) de infraestructura IT, redes, servidores, soporte técnico, respaldos y monitoreo personalizado.",
+    "description": "Soluciones tecnológicas y servicios gestionados (MSP) de infraestructura IT, redes, servidores, soporte técnico, monitoreo proactivo y sistema de inventario inteligente.",
     "logo": "assets/logo-dark.svg",
     "image": "assets/isotipo.svg",
     "knowsAbout": [
-      "Redes y conectividad",
+      "Soporte técnico y mantenimiento",
+      "Redes y conectividad empresarial",
       "Servidores e infraestructura",
-      "Soporte técnico empresarial",
-      "Respaldos y bases de datos",
-      "CCTV y control de acceso biométrico",
-      "Monitoreo de infraestructura IT"
+      "Respaldos y recuperación de datos",
+      "Monitoreo proactivo de infraestructura",
+      "Inventario tecnológico y topología de red",
+      "Seguridad electrónica y control de acceso"
     ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
@@ -52,537 +64,1214 @@
         {
           "@type": "Offer",
           "name": "Plan Básico",
-          "description": "Soporte y mantenimiento continuo para operaciones de hasta 10 equipos.",
-          "priceCurrency": "USD",
-          "price": "190"
+          "description": "Soporte y mantenimiento continuo para operaciones de hasta 10 equipos con monitoreo esencial e inventario gestionado internamente."
         },
         {
           "@type": "Offer",
           "name": "Plan Avanzado",
-          "description": "Gestión proactiva, monitoreo y prioridad operativa para hasta 25 equipos.",
-          "priceCurrency": "USD",
-          "price": "380"
+          "description": "Gestión proactiva, monitoreo de servidores, Internet y red, más acceso del cliente al sistema de inventario, croquis físico y topología para hasta 25 equipos."
         },
         {
           "@type": "Offer",
           "name": "Plan Integral",
-          "description": "Administración IT completa, atención prioritaria y visitas preventivas semanales.",
-          "priceCurrency": "USD",
-          "price": "790"
+          "description": "Administración IT completa, atención prioritaria, visitas semanales, monitoreo proactivo y acceso total al sistema de inventario y documentación."
         }
       ]
     }
   }
   </script>
 </head>
-<body>
-  <!-- Enlace de salto directo para navegación por teclado -->
-  <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
+<body class="m-0 font-light text-samand-navy bg-[#f8fafb] antialiased">
+  <!-- Skip Link accesible -->
+  <a href="#contenido-principal" class="fixed -top-24 focus:top-4 left-4 z-50 bg-samand-cyan text-samand-navy font-bold text-xs px-4 py-3 rounded-md shadow-xl transition-all">
+    Saltar al contenido principal
+  </a>
 
   <!-- HERO -->
-  <div class="hero" id="inicio">
-    <div class="wrap" style="height:100%">
-      <header>
-        <a class="logo" href="#inicio" aria-label="SAMANDTECH - Ir al inicio">
-          <img src="assets/logo-dark.svg" alt="SAMANDTECH" width="218" height="62" fetchpriority="high">
+  <div id="inicio" class="hero-bg relative min-h-[100svh] md:min-h-[820px] md:h-[100svh] md:max-h-[1120px] text-white overflow-hidden flex flex-col">
+    <div class="hero-dots absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+
+    <div class="w-[min(1240px,88%)] mx-auto flex-1 flex flex-col justify-between relative z-10">
+      <header class="relative z-20 flex justify-between items-center py-5 md:py-6">
+        <a href="#inicio" aria-label="SAMANDTECH - Ir al inicio" class="inline-flex items-center">
+          <img src="assets/logo-dark.svg" alt="SAMANDTECH" width="218" height="62" fetchpriority="high" class="block w-[178px] md:w-[218px] h-auto">
         </a>
 
-        <button class="menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="primary-nav">☰</button>
+        <button class="menu md:hidden bg-transparent border border-[#567581] rounded-md text-white px-3 py-2.5 leading-none cursor-pointer" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="primary-nav">☰</button>
 
-        <nav id="primary-nav" aria-label="Navegación principal">
-          <a href="#inicio">Inicio</a>
-          <a href="#nosotros">Nosotros</a>
-          <a href="#servicios">Servicios</a>
-          <a href="#planes">Planes</a>
-          <a href="#contacto" class="nav-contact">Hablemos</a>
+        <nav id="primary-nav" aria-label="Navegación principal" class="hidden md:flex md:items-center md:gap-5 lg:gap-7 text-sm max-md:absolute max-md:top-20 max-md:inset-x-0 max-md:bg-[#18313f] max-md:border max-md:border-[#365361] max-md:rounded-xl max-md:p-6 max-md:flex-col max-md:items-stretch max-md:gap-5 max-md:shadow-2xl">
+          <a href="#inicio" class="text-[#d2dce1] hover:text-samand-cyan transition-colors">Inicio</a>
+          <a href="#nosotros" class="text-[#d2dce1] hover:text-samand-cyan transition-colors">Nosotros</a>
+          <a href="#servicios" class="text-[#d2dce1] hover:text-samand-cyan transition-colors">Servicios</a>
+          <a href="#tecnologia" class="text-[#d2dce1] hover:text-samand-cyan transition-colors">Tecnología</a>
+          <a href="#planes" class="text-[#d2dce1] hover:text-samand-cyan transition-colors">Planes</a>
+          <a href="#proyectos" class="text-[#d2dce1] hover:text-samand-cyan transition-colors">Proyectos</a>
+          <a href="#clientes" class="text-[#d2dce1] hover:text-samand-cyan transition-colors">Clientes</a>
+          <a href="#contacto" class="text-[#d2dce1] hover:text-samand-cyan border border-[#5b8f96] px-4 py-2.5 rounded-md text-center transition-colors">Hablemos</a>
         </nav>
       </header>
 
-      <div class="hero-main">
+      <div class="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] items-center gap-6 md:gap-8 py-8 md:py-0 my-auto">
         <div>
-          <div class="eyebrow">Soluciones tecnológicas</div>
-          <h1>Tecnología que funciona <span>para ti.</span></h1>
-          <p class="lead">En SAMANDTECH diseñamos, administramos y damos soporte a la infraestructura tecnológica de tu empresa para que opere con estabilidad.</p>
-          <div class="actions">
-            <a class="button" href="#contacto" data-preset="Diagnóstico inicial">Solicitar diagnóstico <span aria-hidden="true">→</span></a>
-            <a class="button secondary" href="#servicios">Ver servicios</a>
+          <div class="inline-flex items-center gap-3 text-[10px] md:text-[11px] tracking-[2.4px] uppercase font-semibold text-[#84dce0]">
+            <span class="w-6 h-[2px] bg-samand-cyan" aria-hidden="true"></span>
+            <span>Soluciones tecnológicas</span>
           </div>
-          <div class="small-note">Atención remota y presencial · Propuestas a la medida de cada empresa</div>
+          <h1 class="font-brand text-[42px] sm:text-5xl lg:text-[68px] leading-[1.08] tracking-[-2px] font-semibold my-6 md:my-7">
+            Tecnología que funciona <span class="text-samand-cyan">para ti.</span>
+          </h1>
+          <p class="max-w-[465px] text-[#c2d0d8] text-base md:text-[17px] leading-[1.8]">
+            En SAMANDTECH diseñamos, administramos y damos soporte a la infraestructura tecnológica de tu empresa para que opere con estabilidad.
+          </p>
+          <div class="flex flex-wrap gap-3.5 md:gap-4 mt-7 md:mt-8">
+            <a href="#contacto" data-preset="diagnostico" class="inline-flex items-center justify-between gap-6 md:gap-8 bg-samand-cyan hover:bg-[#46d8f3] text-[#0e2530] px-5 py-4 rounded-md text-xs md:text-sm font-semibold transition-all hover:-translate-y-0.5">
+              <span>Solicitar diagnóstico</span>
+              <span aria-hidden="true">→</span>
+            </a>
+            <a href="#servicios" class="inline-flex items-center justify-between gap-6 border border-[#5e7a88] hover:bg-white/5 text-white px-5 py-4 rounded-md text-xs md:text-sm font-semibold transition-all hover:-translate-y-0.5">
+              Ver servicios
+            </a>
+          </div>
+          <div class="text-xs text-[#9bb3be] mt-7 flex items-center gap-2.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#24d6b1] shrink-0" aria-hidden="true"></span>
+            <span>Atención remota y presencial · Propuestas a la medida de cada empresa</span>
+          </div>
         </div>
 
-        <div class="visual" aria-hidden="true">
-          <div class="orbit"></div>
-          <div class="orbit two"></div>
-          <div class="device">
-            <div class="screen">
-              <div class="screen-inner">
-                <img class="symbol" src="assets/isotipo.svg" alt="" width="96" height="116" decoding="async">
+        <!-- Visual 3D -->
+        <div class="relative h-[340px] sm:h-[420px] md:h-[510px] grid place-items-center scale-75 sm:scale-90 lg:scale-100" aria-hidden="true">
+          <div class="absolute w-[360px] md:w-[410px] h-[360px] md:h-[410px] border border-[#2ac4cd30] rounded-full">
+            <span class="absolute top-14 left-11 w-2 h-2 rounded-full bg-samand-cyan shadow-[0_0_22px_#11c6ea]"></span>
+          </div>
+          <div class="absolute w-[440px] md:w-[510px] h-[440px] md:h-[510px] border border-dashed border-[#2ac4cd30] rounded-full opacity-45"></div>
+
+          <div class="device-3d relative w-[330px] md:w-[350px]">
+            <div class="h-[224px] md:h-[238px] bg-gradient-to-br from-[#415363] to-[#192d39] p-2.5 rounded-2xl border border-[#79949b]">
+              <div class="screen-bg h-full rounded-lg grid place-items-center relative overflow-hidden">
+                <div class="screen-grid absolute inset-0"></div>
+                <img src="assets/isotipo.svg" alt="" width="96" height="116" decoding="async" class="w-24 h-auto relative z-10 drop-shadow-[0_0_16px_#11c6ea55]">
               </div>
             </div>
-            <div class="stand"></div>
-            <div class="base"></div>
+            <div class="w-14 h-12 bg-gradient-to-r from-[#344c59] via-[#78919c] to-[#344c59] mx-auto"></div>
+            <div class="w-40 h-2.5 bg-[#8298a3] rounded-t-full rounded-b-sm mx-auto"></div>
           </div>
-          <div class="float one">
-            <strong>Infraestructura</strong>
-            <i>●</i> Redes, servidores y respaldo
+
+          <div class="absolute top-16 -right-2 bg-[#1b3441e8] backdrop-blur-md border border-[#46848e70] rounded-xl px-5 py-4 shadow-2xl text-xs text-[#cde0e7]">
+            <strong class="block text-white text-sm mb-1">Infraestructura</strong>
+            <span class="text-samand-cyan">●</span> Redes, servidores y respaldo
           </div>
-          <div class="float two">
-            <strong>Soporte directo</strong>
-            <i>●</i> Diagnóstico y seguimiento claro
+          <div class="absolute bottom-16 -left-2 bg-[#1b3441e8] backdrop-blur-md border border-[#46848e70] rounded-xl px-5 py-4 shadow-2xl text-xs text-[#cde0e7]">
+            <strong class="block text-white text-sm mb-1">Soporte directo</strong>
+            <span class="text-samand-cyan">●</span> Diagnóstico y seguimiento claro
           </div>
         </div>
       </div>
 
-      <div class="hero-bottom">
-        <span>SOPORTE TÉCNICO · REDES · SERVIDORES · MONITOREO</span>
-        <a href="#nosotros">EXPLORAR ↓</a>
+      <div class="border-t border-[#536c753d] py-5 md:py-6 flex justify-between items-center gap-4 text-[10px] md:text-[11px] tracking-[1.5px] text-[#9bb3be]">
+        <span class="leading-relaxed">SOPORTE TÉCNICO · REDES · SERVIDORES · MONITOREO</span>
+        <a href="#nosotros" class="text-[#e2edf1] hover:text-samand-cyan shrink-0 transition-colors">EXPLORAR ↓</a>
       </div>
     </div>
   </div>
 
   <!-- CONTENIDO PRINCIPAL -->
-  <main id="contenido-principal" tabindex="-1">
+  <main id="contenido-principal" tabindex="-1" class="outline-none">
+
     <!-- NOSOTROS -->
-    <section id="nosotros" aria-labelledby="heading-nosotros">
-      <div class="wrap about">
+    <section id="nosotros" aria-labelledby="heading-nosotros" class="py-16 md:py-28">
+      <div class="w-[min(1240px,88%)] mx-auto about grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-24">
         <div>
-          <div class="eyebrow">Nosotros</div>
-          <h2 id="heading-nosotros">Un aliado técnico cercano y confiable.</h2>
+          <div class="inline-flex items-center gap-3 text-[11px] tracking-[2.4px] uppercase font-semibold text-samand-teal-text">
+            <span class="w-6 h-[2px] bg-samand-cyan" aria-hidden="true"></span>
+            <span>Nosotros</span>
+          </div>
+          <h2 id="heading-nosotros" class="font-brand text-3xl sm:text-4xl lg:text-[46px] font-semibold tracking-[-1.2px] leading-[1.15] mt-5 mb-6 text-samand-navy">
+            Un aliado técnico cercano y confiable.
+          </h2>
         </div>
+
         <div>
-          <p>SAMANDTECH nace con el objetivo de ofrecer servicios tecnológicos claros, responsables y adaptados a la realidad operativa de cada empresa. Trabajamos como soporte técnico externo o complemento para áreas internas que necesitan respaldo especializado.</p>
-          <div class="values">
-            <div class="value">
-              <span aria-hidden="true">01</span>
-              <h3>Claridad técnica</h3>
-              <p>Explicamos cada diagnóstico, alcance y recomendación en lenguaje directo.</p>
+          <p class="text-[#4a5e69] leading-[1.9] text-sm md:text-base">
+            SAMANDTECH nace con el objetivo de ofrecer servicios tecnológicos claros, responsables y adaptados a la realidad operativa de cada empresa. Trabajamos como soporte técnico externo o complemento para áreas internas que necesitan respaldo especializado.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
+            <div class="value border-t border-[#dbe4e8] pt-5">
+              <span aria-hidden="true" class="text-samand-teal-text font-semibold text-2xl">01</span>
+              <h3 class="text-[15px] font-semibold my-3 text-samand-navy">Claridad técnica</h3>
+              <p class="text-[13.5px] text-[#4a5e69] leading-relaxed m-0">Explicamos cada diagnóstico, alcance y recomendación en lenguaje directo.</p>
             </div>
-            <div class="value">
-              <span aria-hidden="true">02</span>
-              <h3>Continuidad</h3>
-              <p>Priorizamos prevención, respaldo y estabilidad para evitar interrupciones.</p>
+            <div class="value border-t border-[#dbe4e8] pt-5">
+              <span aria-hidden="true" class="text-samand-teal-text font-semibold text-2xl">02</span>
+              <h3 class="text-[15px] font-semibold my-3 text-samand-navy">Continuidad</h3>
+              <p class="text-[13.5px] text-[#4a5e69] leading-relaxed m-0">Priorizamos prevención, respaldo y estabilidad para evitar interrupciones.</p>
             </div>
-            <div class="value">
-              <span aria-hidden="true">03</span>
-              <h3>A la medida</h3>
-              <p>Cada proyecto y plan se ajusta al tamaño real y presupuesto de tu operación.</p>
+            <div class="value border-t border-[#dbe4e8] pt-5">
+              <span aria-hidden="true" class="text-samand-teal-text font-semibold text-2xl">03</span>
+              <h3 class="text-[15px] font-semibold my-3 text-samand-navy">A la medida</h3>
+              <p class="text-[13.5px] text-[#4a5e69] leading-relaxed m-0">Cada proyecto y plan se ajusta al tamaño real y presupuesto de tu operación.</p>
             </div>
-            <div class="value">
-              <span aria-hidden="true">04</span>
-              <h3>Compromiso</h3>
-              <p>Acompañamiento constante desde la implementación hasta el soporte diario.</p>
+            <div class="value border-t border-[#dbe4e8] pt-5">
+              <span aria-hidden="true" class="text-samand-teal-text font-semibold text-2xl">04</span>
+              <h3 class="text-[15px] font-semibold my-3 text-samand-navy">Compromiso</h3>
+              <p class="text-[13.5px] text-[#4a5e69] leading-relaxed m-0">Acompañamiento constante desde la implementación hasta el soporte diario.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SERVICIOS -->
-    <section class="services" id="servicios" aria-labelledby="heading-servicios">
-      <div class="wrap">
-        <div class="section-head">
+    <!-- SERVICIOS (renderizados dinámicamente desde js/script.js) -->
+    <section id="servicios" aria-labelledby="heading-servicios" class="bg-[#edf3f5] border-y border-[#dfe8ec] py-16 md:py-28">
+      <div class="w-[min(1240px,88%)] mx-auto">
+        <div class="section-head flex flex-col md:flex-row justify-between md:items-end gap-6 md:gap-14 mb-11">
           <div>
-            <div class="eyebrow">Servicios</div>
-            <h2 id="heading-servicios">Lo que hacemos</h2>
+            <div class="inline-flex items-center gap-3 text-[11px] tracking-[2.4px] uppercase font-semibold text-samand-teal-text">
+              <span class="w-6 h-[2px] bg-samand-cyan" aria-hidden="true"></span>
+              <span>Servicios</span>
+            </div>
+            <h2 id="heading-servicios" class="font-brand text-3xl sm:text-4xl lg:text-[46px] font-semibold tracking-[-1.2px] leading-[1.15] mt-5 mb-0 text-samand-navy">
+              Lo que hacemos
+            </h2>
           </div>
-          <p>Cubrimos las áreas clave de infraestructura, soporte, seguridad física y monitoreo que mantienen tu operación andando.</p>
+          <p class="max-w-[380px] text-[#465a65] leading-[1.8] text-sm md:text-[14.5px] m-0">
+            Cubrimos las áreas clave de infraestructura, soporte, seguridad física y monitoreo que mantienen tu operación andando.
+          </p>
         </div>
-        <div class="service-list"></div>
+
+        <!-- Contenedor poblado por js/script.js -->
+        <div class="service-list grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 items-stretch"></div>
       </div>
     </section>
 
-    <!-- PLANES -->
-    <section class="plans" id="planes" aria-labelledby="heading-planes">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">Planes MSP</div>
-            <h2 id="heading-planes">Planes de mantenimiento</h2>
+    <!-- TECNOLOGÍA PROPIA SAMANDTECH (DIFERENCIADORES TECNOLÓGICOS) -->
+    <section id="tecnologia" aria-labelledby="heading-tecnologia" class="tech-showcase-bg text-white py-16 md:py-28 border-b border-[#2c4353] relative overflow-hidden">
+      <div class="hero-dots absolute inset-0 opacity-25 pointer-events-none" aria-hidden="true"></div>
+
+      <div class="w-[min(1240px,88%)] mx-auto relative z-10">
+        <!-- Encabezado de sección -->
+        <div class="max-w-3xl mb-12 md:mb-14">
+          <div class="inline-flex items-center gap-3 text-[11px] tracking-[2.4px] uppercase font-semibold text-samand-cyan">
+            <span class="w-6 h-[2px] bg-samand-cyan" aria-hidden="true"></span>
+            <span>Tecnología propia SAMANDTECH</span>
           </div>
-          <p>Tres niveles de atención mensual diseñados para crecer con tu empresa. Selecciona la cobertura operativa adecuada o solicita una cotización a la medida.</p>
+          <h2 id="heading-tecnologia" class="font-brand text-3xl sm:text-4xl lg:text-[44px] font-semibold tracking-[-1.2px] leading-[1.15] mt-5 mb-5 text-white">
+            Más que soporte técnico: anticipación, control y visibilidad de tu infraestructura.
+          </h2>
+          <p class="text-[#c5d7e0] text-sm md:text-[16px] leading-[1.8] m-0">
+            Integramos sistemas propios diseñados por nuestro equipo para supervisar la operación tecnológica y documentar visualmente cada activo, espacio y conexión de tu empresa.
+          </p>
         </div>
 
-        <div class="plan-grid">
+        <!-- Dos sistemas principales -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-7 items-stretch">
+          <!-- SISTEMA 1: MONITOREO PROACTIVO DE INFRAESTRUCTURA -->
+          <article class="tech-card bg-[#162330]/95 border border-[#2f4859] hover:border-samand-cyan/60 rounded-2xl p-6 sm:p-8 flex flex-col justify-between shadow-xl shadow-black/15 transition-all duration-200 hover:-translate-y-1">
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-2.5 mb-5">
+                <span class="text-[10.5px] font-bold uppercase tracking-wider text-samand-cyan bg-samand-cyan/12 border border-samand-cyan/30 px-3 py-1 rounded-full">
+                  Sistema 01 · Supervisión continua
+                </span>
+                <span class="text-[11px] font-semibold text-[#b8ced9] bg-white/5 border border-white/10 px-2.5 py-1 rounded-md">
+                  Incluido según plan
+                </span>
+              </div>
+
+              <h3 class="text-xl sm:text-[23px] font-semibold text-white tracking-tight leading-snug mb-3">
+                Monitoreo Proactivo de Infraestructura
+              </h3>
+
+              <blockquote class="m-0 mb-6 bg-[#101c26] border-l-[3px] border-samand-cyan rounded-r-xl px-4 py-3 text-[13.5px] font-medium text-[#e6f3f8] leading-relaxed">
+                “No esperamos a que tu empresa reporte una falla. Trabajamos para detectarla antes.”
+              </blockquote>
+
+              <!-- Ilustración conceptual esquemática (SVG abstracto, no captura de software) -->
+              <figure class="m-0 mb-6 bg-[#0f1a24] border border-[#273d4c] rounded-xl p-4">
+                <svg viewBox="0 0 420 145" class="w-full h-auto block" role="img" aria-label="Esquema conceptual de monitoreo proactivo de servidores, Internet y dispositivos de red hacia el equipo técnico de SAMANDTECH">
+                  <!-- Líneas de flujo conceptual -->
+                  <path d="M108 32 H175 V72 H215" fill="none" stroke="#11c6ea" stroke-opacity="0.45" stroke-width="1.5" stroke-dasharray="4 4"/>
+                  <path d="M108 72 H215" fill="none" stroke="#11c6ea" stroke-opacity="0.7" stroke-width="1.75"/>
+                  <path d="M108 112 H175 V72 H215" fill="none" stroke="#00877d" stroke-opacity="0.65" stroke-width="1.5" stroke-dasharray="4 4"/>
+                  <path d="M275 72 H316" fill="none" stroke="#11c6ea" stroke-width="1.75"/>
+
+                  <!-- Nodo 1: Servidores -->
+                  <rect x="12" y="16" width="96" height="32" rx="7" fill="#182836" stroke="#355266"/>
+                  <circle cx="26" cy="32" r="3.5" fill="#24d6b1"/>
+                  <text x="36" y="36" fill="#e2eef3" font-size="10.5" font-family="Montserrat, sans-serif" font-weight="600">Servidores</text>
+
+                  <!-- Nodo 2: Internet -->
+                  <rect x="12" y="56" width="96" height="32" rx="7" fill="#182836" stroke="#355266"/>
+                  <circle cx="26" cy="72" r="3.5" fill="#11c6ea"/>
+                  <text x="36" y="76" fill="#e2eef3" font-size="10.5" font-family="Montserrat, sans-serif" font-weight="600">Enlace Web</text>
+
+                  <!-- Nodo 3: Dispositivos de red -->
+                  <rect x="12" y="96" width="96" height="32" rx="7" fill="#182836" stroke="#355266"/>
+                  <circle cx="26" cy="112" r="3.5" fill="#24d6b1"/>
+                  <text x="36" y="116" fill="#e2eef3" font-size="10.5" font-family="Montserrat, sans-serif" font-weight="600">Red &amp; Equipos</text>
+
+                  <!-- Núcleo Central SAMANDTECH -->
+                  <rect x="215" y="42" width="60" height="60" rx="14" fill="#132c38" stroke="#11c6ea" stroke-width="1.5"/>
+                  <path d="M229 72 h8 l4 -11 l6 22 l4 -11 h8" fill="none" stroke="#11c6ea" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+                  <!-- Destino: Alerta Equipo Técnico -->
+                  <rect x="316" y="46" width="92" height="52" rx="9" fill="#0e3839" stroke="#00877d" stroke-width="1.5"/>
+                  <text x="362" y="69" text-anchor="middle" fill="#8ef0e6" font-size="9.5" font-family="Montserrat, sans-serif" font-weight="700">ALERTA</text>
+                  <text x="362" y="83" text-anchor="middle" fill="#e2eef3" font-size="9.5" font-family="Montserrat, sans-serif" font-weight="500">Equipo Técnico</text>
+                </svg>
+                <figcaption class="text-[11px] text-[#8ba3b1] text-center mt-2">
+                  Diagrama conceptual de flujo de supervisión y notificación temprana de incidencias
+                </figcaption>
+              </figure>
+
+              <p class="text-[13.5px] text-[#c3d5df] leading-relaxed mb-4">
+                Instalamos nuestro sistema propio de supervisión en la infraestructura del cliente para vigilar elementos clave y notificar anomalías a nuestro equipo de soporte antes de que escalen:
+              </p>
+
+              <ul class="list-none p-0 m-0 grid gap-2.5 text-[13px] text-[#e1edf2]">
+                <li class="pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-samand-cyan before:font-bold">
+                  <strong>Supervisión de infraestructura:</strong> seguimiento continuo de servidores, conectividad a Internet y dispositivos de red definidos en el servicio.
+                </li>
+                <li class="pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-samand-cyan before:font-bold">
+                  <strong>Detección temprana y alertas:</strong> identificación de incidencias operativas y generación inmediata de alertas internas para atención técnica.
+                </li>
+                <li class="pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-samand-cyan before:font-bold">
+                  <strong>Menor impacto operativo:</strong> permite iniciar diagnósticos y acciones correctivas con anticipación frente a fallas detectables.
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-white/10 text-[12px] text-[#9cb4c2] flex items-center justify-between gap-2">
+              <span>Plan Básico: monitoreo esencial · Avanzado e Integral: monitoreo proactivo completo</span>
+            </div>
+          </article>
+
+          <!-- SISTEMA 2: INVENTARIO Y DOCUMENTACIÓN INTELIGENTE -->
+          <article class="tech-card bg-[#162330]/95 border border-[#2f4859] hover:border-samand-cyan/60 rounded-2xl p-6 sm:p-8 flex flex-col justify-between shadow-xl shadow-black/15 transition-all duration-200 hover:-translate-y-1">
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-2.5 mb-5">
+                <span class="text-[10.5px] font-bold uppercase tracking-wider text-[#7eece2] bg-samand-teal/25 border border-samand-teal/50 px-3 py-1 rounded-full">
+                  Sistema 02 · Visibilidad y control
+                </span>
+                <span class="text-[11px] font-semibold text-samand-navy bg-samand-cyan px-2.5 py-1 rounded-md">
+                  Acceso en Avanzado e Integral
+                </span>
+              </div>
+
+              <h3 class="text-xl sm:text-[23px] font-semibold text-white tracking-tight leading-snug mb-3">
+                Inventario y Documentación Inteligente
+              </h3>
+
+              <blockquote class="m-0 mb-6 bg-[#101c26] border-l-[3px] border-samand-teal rounded-r-xl px-4 py-3 text-[13.5px] font-medium text-[#e6f3f8] leading-relaxed">
+                “Control visual completo de tus activos, ubicaciones físicas y conexiones de red en un solo entorno.”
+              </blockquote>
+
+              <!-- Ilustración conceptual esquemática (Croquis físico + Topología lógica) -->
+              <figure class="m-0 mb-6 bg-[#0f1a24] border border-[#273d4c] rounded-xl p-4">
+                <svg viewBox="0 0 420 145" class="w-full h-auto block" role="img" aria-label="Esquema conceptual de croquis físico de instalaciones y topología lógica de red">
+                  <!-- Panel izquierdo: Croquis físico conceptual -->
+                  <rect x="12" y="14" width="186" height="117" rx="8" fill="#152431" stroke="#314b5e"/>
+                  <text x="24" y="32" fill="#8ef0e6" font-size="9.5" font-family="Montserrat, sans-serif" font-weight="700">CROQUIS FÍSICO</text>
+                  <!-- Divisiones de oficina esquemáticas -->
+                  <rect x="24" y="42" width="76" height="36" rx="4" fill="none" stroke="#48687d" stroke-dasharray="3 2"/>
+                  <rect x="108" y="42" width="78" height="36" rx="4" fill="none" stroke="#48687d" stroke-dasharray="3 2"/>
+                  <rect x="24" y="84" width="162" height="36" rx="4" fill="none" stroke="#48687d" stroke-dasharray="3 2"/>
+                  <!-- Puntos de ubicación de equipos -->
+                  <circle cx="46" cy="60" r="4.5" fill="#11c6ea"/>
+                  <circle cx="78" cy="60" r="4.5" fill="#11c6ea"/>
+                  <circle cx="146" cy="60" r="5" fill="#24d6b1"/>
+                  <circle cx="62" cy="102" r="4.5" fill="#11c6ea"/>
+                  <circle cx="115" cy="102" r="4.5" fill="#11c6ea"/>
+                  <circle cx="158" cy="102" r="4.5" fill="#11c6ea"/>
+
+                  <!-- Panel derecho: Topología y ficha de activo -->
+                  <rect x="214" y="14" width="194" height="117" rx="8" fill="#152431" stroke="#314b5e"/>
+                  <text x="226" y="32" fill="#11c6ea" font-size="9.5" font-family="Montserrat, sans-serif" font-weight="700">TOPOLOGÍA Y ACTIVOS</text>
+                  <!-- Árbol de topología -->
+                  <rect x="291" y="42" width="40" height="18" rx="4" fill="#102e3a" stroke="#11c6ea"/>
+                  <path d="M311 60 V72 M256 72 H366 M256 72 V82 M311 72 V82 M366 72 V82" fill="none" stroke="#53788f" stroke-width="1.4"/>
+                  <rect x="238" y="82" width="36" height="16" rx="3" fill="#1b3140" stroke="#3d6075"/>
+                  <rect x="293" y="82" width="36" height="16" rx="3" fill="#1b3140" stroke="#3d6075"/>
+                  <rect x="348" y="82" width="36" height="16" rx="3" fill="#1b3140" stroke="#3d6075"/>
+                  <!-- Barra inferior de registro -->
+                  <rect x="226" y="106" width="170" height="14" rx="3" fill="#1c3242"/>
+                  <circle cx="236" cy="113" r="3" fill="#24d6b1"/>
+                  <line x1="245" y1="113" x2="345" y2="113" stroke="#7ea0b3" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <figcaption class="text-[11px] text-[#8ba3b1] text-center mt-2">
+                  Representación conceptual de mapeo físico de espacios y topología lógica de red
+                </figcaption>
+              </figure>
+
+              <p class="text-[13.5px] text-[#c3d5df] leading-relaxed mb-4">
+                Mantenemos el registro técnico vivo de tu empresa mediante nuestro sistema propio de inventario y documentación estructurada:
+              </p>
+
+              <ul class="list-none p-0 m-0 grid gap-2.5 text-[13px] text-[#e1edf2]">
+                <li class="pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-samand-cyan before:font-bold">
+                  <strong>Registro y organización de activos:</strong> control ordenado de computadoras, servidores, dispositivos de red y componentes asignados.
+                </li>
+                <li class="pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-samand-cyan before:font-bold">
+                  <strong>Croquis físico de instalaciones:</strong> ubicación visual de cada equipo y componente dentro de las oficinas o áreas de trabajo.
+                </li>
+                <li class="pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-samand-cyan before:font-bold">
+                  <strong>Topología de red y documentación:</strong> esquema claro de cómo se interconectan tus enlaces, switches, servidores y servicios críticos.
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-white/10 text-[12px] text-[#9cb4c2] flex items-center justify-between gap-2">
+              <span>Plan Básico: uso interno SAMANDTECH · Avanzado e Integral: acceso directo del cliente</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- Resumen de acceso por nivel de plan -->
+        <div class="mt-8 bg-[#13202c] border border-[#2d4657] rounded-2xl p-6 md:p-7 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 flex-1">
+            <div class="border-l-2 border-[#6e8999] pl-4">
+              <span class="block text-[11px] font-bold uppercase tracking-wider text-[#9bb5c4] mb-1">En el Plan Básico</span>
+              <p class="text-[13px] text-[#d5e3eb] leading-relaxed m-0">
+                Incluye monitoreo esencial según condiciones del plan. SAMANDTECH administra internamente el inventario como respaldo al soporte (sin acceso del cliente al sistema ni croquis).
+              </p>
+            </div>
+            <div class="border-l-2 border-samand-cyan pl-4">
+              <span class="block text-[11px] font-bold uppercase tracking-wider text-samand-cyan mb-1">En los Planes Avanzado e Integral</span>
+              <p class="text-[13px] text-[#d5e3eb] leading-relaxed m-0">
+                Incluye monitoreo proactivo de servidores, Internet y red, más <strong>acceso directo del cliente</strong> al sistema de inventario, croquis físico y topología de red.
+              </p>
+            </div>
+          </div>
+
+          <a href="#planes" class="inline-flex items-center gap-3 bg-samand-cyan hover:bg-[#46d8f3] text-[#0e2530] px-5 py-3.5 rounded-lg text-xs md:text-sm font-bold transition-all hover:-translate-y-0.5 shrink-0">
+            <span>Ver alcance en planes</span>
+            <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANES MSP (ALTERNATIVA A: COTIZACIÓN PERSONALIZADA + SISTEMAS PROPIOS INTEGRADOS) -->
+    <section id="planes" aria-labelledby="heading-planes" class="bg-[#f8fafb] py-16 md:py-28">
+      <div class="w-[min(1240px,88%)] mx-auto">
+        <div class="section-head flex flex-col md:flex-row justify-between md:items-end gap-6 md:gap-14 mb-11">
+          <div>
+            <div class="inline-flex items-center gap-3 text-[11px] tracking-[2.4px] uppercase font-semibold text-samand-teal-text">
+              <span class="w-6 h-[2px] bg-samand-cyan" aria-hidden="true"></span>
+              <span>Planes MSP</span>
+            </div>
+            <h2 id="heading-planes" class="font-brand text-3xl sm:text-4xl lg:text-[46px] font-semibold tracking-[-1.2px] leading-[1.15] mt-5 mb-0 text-samand-navy">
+              Planes de mantenimiento
+            </h2>
+          </div>
+          <p class="max-w-[390px] text-[#465a65] leading-[1.8] text-sm md:text-[14.5px] m-0">
+            Tres niveles de atención mensual diseñados para crecer con tu empresa. Selecciona la cobertura operativa adecuada y solicita una cotización ajustada a tu infraestructura.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
           <!-- PLAN BÁSICO -->
-          <article class="plan" aria-labelledby="plan-basico">
-            <div class="plan-top">
-              <span class="plan-label">Plan Básico</span>
-              <span class="plan-scale">1 a 10 equipos</span>
+          <article aria-labelledby="plan-basico" class="plan bg-white border border-[#dbe5e9] hover:border-[#b8cbd3] rounded-2xl p-7 md:p-8 flex flex-col transition-all duration-200 hover:-translate-y-1 hover:shadow-xl hover:shadow-samand-navy/5">
+            <div class="flex justify-between items-center gap-2.5 flex-wrap">
+              <span class="text-[10px] tracking-[1.8px] text-samand-teal-text font-bold uppercase">Plan Básico</span>
+              <span class="text-[11px] font-semibold text-samand-navy bg-[#edf3f5] border border-[#d5e2e7] px-2.5 py-1 rounded-full">1 a 10 equipos</span>
             </div>
-            <h3 id="plan-basico">Básico</h3>
-            <p class="plan-profile">Para comercios, oficinas pequeñas y despachos que buscan soporte continuo sin complejidad.</p>
+            <h3 id="plan-basico" class="text-[28px] font-semibold tracking-tight mt-4 mb-2 text-samand-navy">Básico</h3>
+            <p class="text-[13.5px] leading-relaxed text-[#4f636e] mb-5 min-h-[44px]">Para comercios, oficinas pequeñas y despachos que buscan soporte continuo sin complejidad.</p>
 
-            <div class="plan-price">
-              <div class="price-amount">USD 190 <span>/ mes</span></div>
-              <div class="price-extra">+ USD 15 / equipo adicional</div>
+            <div class="py-4 mb-4 border-y border-[#e4edf1]">
+              <div class="text-xl font-bold tracking-tight text-samand-navy leading-snug">Cotización personalizada</div>
+              <div class="text-xs font-semibold text-samand-teal-text mt-1">Según inventario de equipos y alcance</div>
             </div>
 
-            <dl class="plan-metrics">
+            <dl class="mb-5 p-4 bg-[#f4f8fa] border border-[#e1ebf0] rounded-xl grid gap-2.5">
               <div>
-                <dt>Horario y SLA</dt>
-                <dd>Lun – Vie · 8:00 a. m. – 5:00 p. m. · Respuesta ≤ 4 h</dd>
+                <dt class="text-[10px] font-bold tracking-wider uppercase text-samand-muted">Horario y SLA</dt>
+                <dd class="m-0 text-xs font-semibold leading-snug text-samand-navy">Lun – Vie · 8:00 a. m. – 5:00 p. m. · Respuesta ≤ 4 h</dd>
               </div>
               <div>
-                <dt>Visitas incluidas</dt>
-                <dd>1 visita preventiva mensual</dd>
+                <dt class="text-[10px] font-bold tracking-wider uppercase text-samand-muted">Visitas incluidas</dt>
+                <dd class="m-0 text-xs font-semibold leading-snug text-samand-navy">1 visita preventiva mensual</dd>
               </div>
             </dl>
 
-            <ul>
-              <li>Soporte remoto de incidencias</li>
-              <li>Mantenimiento preventivo programado</li>
-              <li>Administración básica de red y Wi-Fi</li>
-              <li>Verificación mensual de respaldos</li>
-              <li>Informe ejecutivo mensual</li>
+            <ul class="list-none p-0 mb-5 divide-y divide-[#849eaa22] text-[13px] text-[#2b3f4a]">
+              <li class="py-2.5 pl-5 relative before:content-['✓'] before:absolute before:left-0 before:font-bold before:text-samand-teal-text">Soporte remoto de incidencias</li>
+              <li class="py-2.5 pl-5 relative before:content-['✓'] before:absolute before:left-0 before:font-bold before:text-samand-teal-text">Mantenimiento preventivo programado</li>
+              <li class="py-2.5 pl-5 relative before:content-['✓'] before:absolute before:left-0 before:font-bold before:text-samand-teal-text">Administración básica de red y Wi-Fi</li>
+              <li class="py-2.5 pl-5 relative before:content-['✓'] before:absolute before:left-0 before:font-bold before:text-samand-teal-text">Monitoreo esencial según condiciones del plan</li>
+              <li class="py-2.5 pl-5 relative before:content-['✓'] before:absolute before:left-0 before:font-bold before:text-samand-teal-text">Inventario gestionado internamente por SAMANDTECH</li>
+              <li class="py-2.5 pl-5 relative before:content-['✓'] before:absolute before:left-0 before:font-bold before:text-samand-teal-text">Verificación mensual de respaldos e informe ejecutivo</li>
             </ul>
 
-            <p class="plan-detail">Ideal para operaciones de 1 a 10 equipos. Emergencias fuera de horario o visitas urgentes se atienden bajo tarifa preferencial.</p>
-            <a class="plan-link" href="#contacto" data-preset="Plan Básico (USD 190/mes)">Consultar plan Básico <span aria-hidden="true">→</span></a>
+            <p class="text-xs text-samand-slate leading-relaxed mt-auto mb-5 pt-3">Ideal para operaciones de 1 a 10 equipos. Emergencias fuera de horario o visitas urgentes se atienden bajo tarifa preferencial. No incluye acceso del cliente al portal de inventario ni croquis.</p>
+            <a href="#contacto" data-preset="Plan Básico (A cotizar)" class="border-t border-[#849eaa38] pt-4 text-[13.5px] font-semibold flex justify-between items-center text-samand-navy hover:text-samand-teal-text transition-colors">
+              <span>Solicitar cotización Básica</span><span aria-hidden="true">→</span>
+            </a>
           </article>
 
           <!-- PLAN AVANZADO -->
-          <article class="plan featured" aria-labelledby="plan-avanzado">
-            <div class="plan-top">
-              <span class="plan-label">Más elegido</span>
-              <span class="plan-scale">11 a 25 equipos</span>
+          <article aria-labelledby="plan-avanzado" class="plan bg-gradient-to-br from-samand-navy to-[#16323d] text-white border-[1.5px] border-samand-cyan rounded-2xl p-7 md:p-8 flex flex-col shadow-2xl shadow-samand-navy/15 transition-all duration-200 hover:-translate-y-1">
+            <div class="flex justify-between items-center gap-2.5 flex-wrap">
+              <span class="text-[10px] tracking-[1.8px] text-samand-cyan font-bold uppercase">Más elegido</span>
+              <span class="text-[11px] font-semibold text-[#d8f6fc] bg-samand-cyan/15 border border-samand-cyan/35 px-2.5 py-1 rounded-full">11 a 25 equipos</span>
             </div>
-            <h3 id="plan-avanzado">Avanzado</h3>
-            <p class="plan-profile">Para pymes con operación diaria continua que requieren gestión proactiva, monitoreo y prioridad.</p>
+            <h3 id="plan-avanzado" class="text-[28px] font-semibold tracking-tight mt-4 mb-2 text-white">Avanzado</h3>
+            <p class="text-[13.5px] leading-relaxed text-[#c5d9e2] mb-5 min-h-[44px]">Para pymes con operación diaria continua que requieren gestión proactiva, monitoreo y prioridad.</p>
 
-            <div class="plan-price">
-              <div class="price-amount">USD 380 <span>/ mes</span></div>
-              <div class="price-extra">+ USD 13 / equipo adicional</div>
+            <div class="py-4 mb-4 border-y border-white/15">
+              <div class="text-xl font-bold tracking-tight text-white leading-snug">Cotización personalizada</div>
+              <div class="text-xs font-semibold text-samand-cyan mt-1">Según inventario de equipos y complejidad</div>
             </div>
 
-            <dl class="plan-metrics">
+            <dl class="mb-5 p-4 bg-[#12222d80] border border-[#2c4d5b] rounded-xl grid gap-2.5">
               <div>
-                <dt>Horario y SLA</dt>
-                <dd>Lun – Sáb · 7:00 a. m. – 8:00 p. m. · Respuesta ≤ 2 h</dd>
+                <dt class="text-[10px] font-bold tracking-wider uppercase text-[#9ec4d2]">Horario y SLA</dt>
+                <dd class="m-0 text-xs font-semibold leading-snug text-[#eef7fa]">Lun – Sáb · 7:00 a. m. – 8:00 p. m. · Respuesta ≤ 2 h</dd>
               </div>
               <div>
-                <dt>Visitas incluidas</dt>
-                <dd>2 visitas preventivas al mes + 2 emergencias incluidas</dd>
+                <dt class="text-[10px] font-bold tracking-wider uppercase text-[#9ec4d2]">Visitas incluidas</dt>
+                <dd class="m-0 text-xs font-semibold leading-snug text-[#eef7fa]">2 visitas preventivas al mes + 2 emergencias incluidas</dd>
               </div>
             </dl>
 
-            <ul>
-              <li>Todo lo incluido en el Plan Básico</li>
-              <li>Monitoreo continuo de servidores y red</li>
-              <li>Gestión de respaldos y pruebas de restauración</li>
-              <li>Administración de usuarios, correos y accesos</li>
-              <li>Inventario técnico actualizado y reportes detallados</li>
+            <ul class="list-none p-0 mb-5 divide-y divide-white/10 text-[13px] text-[#e1edf2]">
+              <li class="py-2.5 pl-5 relative before:content-['✓'] before:absolute before:left-0 before:font-bold before:text-samand-cyan">Todo lo incluido en el Plan Básico</li>
+              <li class="py-2.5 pl-5 relative before:content-['✓'] before:absolute before:left-0 before:font-bold before:text-samand-cyan">Monitoreo proactivo de servidores, Internet y dispositivos de red</li>
+              <li class="py-2.5 pl-5 relative before:content-['✓'] before:absolute before:left-0 before:font-bold before:text-samand-cyan">Acceso del cliente al sistema propio de inventario</li>
+              <li class="py-2.5 pl-5 relative before:content-['✓'] before:absolute before:left-0 before:font-bold before:text-samand-cyan">Croquis físico de instalaciones y topología de red</li>
+              <li class="py-2.5 pl-5 relative before:content-['✓'] before:absolute before:left-0 before:font-bold before:text-samand-cyan">Gestión de respaldos, pruebas de restauración y reportes detallados</li>
             </ul>
 
-            <p class="plan-detail">Pensado para empresas de 11 a 25 equipos con alta dependencia operativa. Incluye soporte remoto prioritario en horario extendido.</p>
-            <a class="plan-link" href="#contacto" data-preset="Plan Avanzado (USD 380/mes)">Consultar plan Avanzado <span aria-hidden="true">→</span></a>
+            <p class="text-xs text-[#abc5d0] leading-relaxed mt-auto mb-5 pt-3">Pensado para empresas de 11 a 25 equipos con alta dependencia operativa. Incluye soporte remoto prioritario en horario extendido y visibilidad completa de activos.</p>
+            <a href="#contacto" data-preset="Plan Avanzado (A cotizar)" class="border-t border-white/15 pt-4 text-[13.5px] font-semibold flex justify-between items-center text-samand-cyan hover:text-white transition-colors">
+              <span>Solicitar cotización Avanzada</span><span aria-hidden="true">→</span>
+            </a>
           </article>
 
           <!-- PLAN INTEGRAL -->
-          <article class="plan enterprise" aria-labelledby="plan-integral">
-            <div class="plan-top">
-              <span class="plan-label">Plan Integral</span>
-              <span class="plan-scale">Más de 25 equipos</span>
+          <article aria-labelledby="plan-integral" class="plan bg-gradient-to-b from-white to-[#f1f6f8] border-[1.5px] border-[#9cb3be] rounded-2xl p-7 md:p-8 flex flex-col shadow-lg shadow-samand-navy/5 transition-all duration-200 hover:-translate-y-1">
+            <div class="flex justify-between items-center gap-2.5 flex-wrap">
+              <span class="text-[10px] tracking-[1.8px] text-samand-navy font-bold uppercase">Plan Integral</span>
+              <span class="text-[11px] font-semibold text-white bg-samand-navy border border-samand-navy px-2.5 py-1 rounded-full">Más de 25 equipos</span>
             </div>
-            <h3 id="plan-integral">Integral</h3>
-            <p class="plan-profile">Para empresas consolidadas, clínicas o multi-sede que requieren administración IT completa y respaldo continuo.</p>
+            <h3 id="plan-integral" class="text-[28px] font-semibold tracking-tight mt-4 mb-2 text-samand-navy">Integral</h3>
+            <p class="text-[13.5px] leading-relaxed text-[#4f636e] mb-5 min-h-[44px]">Para empresas consolidadas, clínicas o multi-sede que requieren administración IT completa y respaldo continuo.</p>
 
-            <div class="plan-price">
-              <div class="price-amount">USD 790 <span>/ mes</span></div>
-              <div class="price-extra">+ USD 11 / equipo adicional · A medida según sedes</div>
+            <div class="py-4 mb-4 border-y border-[#e4edf1]">
+              <div class="text-xl font-bold tracking-tight text-samand-navy leading-snug">Cotización personalizada</div>
+              <div class="text-xs font-semibold text-samand-teal-text mt-1">A medida según sedes y criticidad operativa</div>
             </div>
 
-            <dl class="plan-metrics">
+            <dl class="mb-5 p-4 bg-white border border-[#d6e3e9] rounded-xl grid gap-2.5">
               <div>
-                <dt>Horario y SLA</dt>
-                <dd>24/7 para críticos · Respuesta ≤ 1 h</dd>
+                <dt class="text-[10px] font-bold tracking-wider uppercase text-samand-muted">Horario y SLA</dt>
+                <dd class="m-0 text-xs font-semibold leading-snug text-samand-navy">24/7 para críticos · Respuesta ≤ 1 h</dd>
               </div>
               <div>
-                <dt>Visitas incluidas</dt>
-                <dd>Visitas semanales programadas + emergencias ilimitadas</dd>
+                <dt class="text-[10px] font-bold tracking-wider uppercase text-samand-muted">Visitas incluidas</dt>
+                <dd class="m-0 text-xs font-semibold leading-snug text-samand-navy">Visitas semanales programadas + emergencias ilimitadas</dd>
               </div>
             </dl>
 
-            <ul>
-              <li>Todo lo incluido en el Plan Avanzado</li>
-              <li>Monitoreo personalizado con alertas automáticas</li>
-              <li>Administración integral de servidores y virtualización</li>
-              <li>Gestión de seguridad perimetral, CCTV y acceso biométrico</li>
-              <li>Consultoría de mejora continua y planificación de capacidad</li>
+            <ul class="list-none p-0 mb-5 divide-y divide-[#849eaa22] text-[13px] text-[#2b3f4a]">
+              <li class="py-2.5 pl-5 relative before:content-['✓'] before:absolute before:left-0 before:font-bold before:text-samand-teal-text">Todo lo incluido en el Plan Avanzado</li>
+              <li class="py-2.5 pl-5 relative before:content-['✓'] before:absolute before:left-0 before:font-bold before:text-samand-teal-text">Monitoreo proactivo de servidores, Internet y dispositivos de red</li>
+              <li class="py-2.5 pl-5 relative before:content-['✓'] before:absolute before:left-0 before:font-bold before:text-samand-teal-text">Acceso completo a inventario, croquis físico y topología de red</li>
+              <li class="py-2.5 pl-5 relative before:content-['✓'] before:absolute before:left-0 before:font-bold before:text-samand-teal-text">Administración integral de servidores y virtualización</li>
+              <li class="py-2.5 pl-5 relative before:content-['✓'] before:absolute before:left-0 before:font-bold before:text-samand-teal-text">Gestión de seguridad perimetral, CCTV y acceso biométrico</li>
             </ul>
 
-            <p class="plan-detail">Cobertura dedicada para infraestructuras críticas o más de 25 equipos. El alcance exacto se ajusta tras levantamiento técnico.</p>
-            <a class="plan-link" href="#contacto" data-preset="Plan Integral (USD 790/mes)">Consultar plan Integral <span aria-hidden="true">→</span></a>
+            <p class="text-xs text-samand-slate leading-relaxed mt-auto mb-5 pt-3">Cobertura dedicada para infraestructuras críticas o más de 25 equipos. El alcance exacto se ajusta tras levantamiento técnico.</p>
+            <a href="#contacto" data-preset="Plan Integral (A cotizar)" class="border-t border-[#849eaa38] pt-4 text-[13.5px] font-semibold flex justify-between items-center text-samand-navy hover:text-samand-teal-text transition-colors">
+              <span>Solicitar cotización Integral</span><span aria-hidden="true">→</span>
+            </a>
           </article>
         </div>
 
         <!-- TABLA COMPARATIVA DE PLANES -->
-        <div class="plan-compare">
-          <div class="plan-compare-head">
+        <div class="mt-10 md:mt-14 bg-white border border-[#dbe5e9] rounded-2xl p-5 md:p-8 shadow-sm">
+          <div class="flex justify-between items-end gap-6 flex-wrap mb-5">
             <div>
-              <h3>Comparativa detallada de planes</h3>
-              <p>Evalúa el alcance operativo, tiempos de respuesta y servicios incluidos en cada nivel de cobertura.</p>
+              <h3 class="text-lg md:text-[21px] font-semibold tracking-tight mb-1.5 text-samand-navy">Comparativa detallada de planes</h3>
+              <p class="text-[13.5px] text-[#4f636e] m-0">Evalúa el alcance operativo, tiempos de respuesta y sistemas propios incluidos en cada nivel de cobertura.</p>
             </div>
-            <div class="plan-legend" aria-hidden="true">
-              <span><i class="cmp-dot is-yes">✓</i> Incluido</span>
-              <span><i class="cmp-dot is-cond">◐</i> Según alcance</span>
-              <span><i class="cmp-dot is-no">—</i> No incluido</span>
+            <div class="flex gap-4 flex-wrap text-[11.5px] text-[#4f636e] font-semibold" aria-hidden="true">
+              <span class="inline-flex items-center gap-1.5"><i class="inline-grid place-items-center w-4.5 h-4.5 rounded-full not-italic text-[10px] font-bold bg-[#00877d18] text-samand-teal-text">✓</i> Incluido</span>
+              <span class="inline-flex items-center gap-1.5"><i class="inline-grid place-items-center w-4.5 h-4.5 rounded-full not-italic text-[10px] font-bold bg-[#11c6ea20] text-[#09697f]">◐</i> Según alcance / interno</span>
+              <span class="inline-flex items-center gap-1.5"><i class="inline-grid place-items-center w-4.5 h-4.5 rounded-full not-italic text-[10px] font-bold bg-[#7a88951c] text-samand-muted">—</i> No incluido</span>
             </div>
           </div>
 
-          <div class="plan-compare-scroll" role="region" aria-label="Tabla comparativa de planes MSP" tabindex="0">
-            <table class="compare-table">
+          <div class="overflow-x-auto border border-[#e1ebf0] rounded-xl" role="region" aria-label="Tabla comparativa de planes MSP" tabindex="0">
+            <table class="w-full min-w-[740px] border-collapse text-left text-[13px]">
               <thead>
-                <tr>
-                  <th scope="col">Características</th>
-                  <th scope="col">
-                    <span class="th-plan">Básico</span>
-                    <small>USD 190/mes · 1–10 eq.</small>
+                <tr class="border-b border-[#dbe5e9]">
+                  <th scope="col" class="w-[24%] bg-[#f4f8fa] px-4 py-4 text-[11px] tracking-wider uppercase text-samand-muted">Características</th>
+                  <th scope="col" class="bg-[#f4f8fa] text-samand-navy px-4 py-4">
+                    <span class="block text-base font-bold">Básico</span>
+                    <small class="block text-[11px] font-medium text-samand-muted mt-0.5">1–10 equipos · A cotizar</small>
                   </th>
-                  <th scope="col" class="th-featured">
-                    <span class="th-plan">Avanzado</span>
-                    <small>USD 380/mes · 11–25 eq.</small>
+                  <th scope="col" class="bg-samand-navy text-white border-b-2 border-samand-cyan px-4 py-4">
+                    <span class="block text-base font-bold">Avanzado</span>
+                    <small class="block text-[11px] font-medium text-[#a9c8d4] mt-0.5">11–25 equipos · A cotizar</small>
                   </th>
-                  <th scope="col" class="th-enterprise">
-                    <span class="th-plan">Integral</span>
-                    <small>USD 790/mes · +25 eq.</small>
+                  <th scope="col" class="bg-[#eef4f7] text-samand-navy px-4 py-4">
+                    <span class="block text-base font-bold">Integral</span>
+                    <small class="block text-[11px] font-medium text-samand-muted mt-0.5">+25 equipos · A cotizar</small>
                   </th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">Equipos incluidos en base</th>
-                  <td>Hasta 10 equipos <span class="cmp-note">+$15 por equipo extra</span></td>
-                  <td class="col-featured">Hasta 25 equipos <span class="cmp-note">+$13 por equipo extra</span></td>
-                  <td>Desde 26 equipos <span class="cmp-note">+$11 por equipo extra</span></td>
+              <tbody class="divide-y divide-[#edf3f5] text-[#273b46]">
+                <tr class="hover:bg-[#f8fbfc]">
+                  <th scope="row" class="px-4 py-3.5 font-semibold text-samand-navy bg-[#fcfdfe]">Capacidad operativa sugerida</th>
+                  <td class="px-4 py-3.5">Hasta 10 equipos <span class="block text-[11px] font-normal text-samand-slate mt-0.5">Escalable por equipo adicional</span></td>
+                  <td class="px-4 py-3.5 bg-[#11c6ea08]">Hasta 25 equipos <span class="block text-[11px] font-normal text-samand-slate mt-0.5">Escalable por equipo adicional</span></td>
+                  <td class="px-4 py-3.5">Desde 26 equipos <span class="block text-[11px] font-normal text-samand-slate mt-0.5">Dimensionamiento a medida</span></td>
                 </tr>
-                <tr>
-                  <th scope="row">Horario de atención</th>
-                  <td>Lun – Vie · 8:00 a. m. – 5:00 p. m.</td>
-                  <td class="col-featured">Lun – Sáb · 7:00 a. m. – 8:00 p. m.</td>
-                  <td>24/7 para servicios críticos</td>
+                <tr class="hover:bg-[#f8fbfc]">
+                  <th scope="row" class="px-4 py-3.5 font-semibold text-samand-navy bg-[#fcfdfe]">Horario de atención</th>
+                  <td class="px-4 py-3.5">Lun – Vie · 8:00 a. m. – 5:00 p. m.</td>
+                  <td class="px-4 py-3.5 bg-[#11c6ea08]">Lun – Sáb · 7:00 a. m. – 8:00 p. m.</td>
+                  <td class="px-4 py-3.5">24/7 para servicios críticos</td>
                 </tr>
-                <tr>
-                  <th scope="row">Tiempo máximo de respuesta (SLA)</th>
-                  <td>≤ 4 horas hábiles</td>
-                  <td class="col-featured">≤ 2 horas</td>
-                  <td>≤ 1 hora</td>
+                <tr class="hover:bg-[#f8fbfc]">
+                  <th scope="row" class="px-4 py-3.5 font-semibold text-samand-navy bg-[#fcfdfe]">Tiempo máximo de respuesta (SLA)</th>
+                  <td class="px-4 py-3.5">≤ 4 horas hábiles</td>
+                  <td class="px-4 py-3.5 bg-[#11c6ea08]">≤ 2 horas</td>
+                  <td class="px-4 py-3.5">≤ 1 hora</td>
                 </tr>
-                <tr>
-                  <th scope="row">Visitas preventivas en sitio</th>
-                  <td>1 visita al mes</td>
-                  <td class="col-featured">2 visitas al mes</td>
-                  <td>4 visitas al mes (semanal)</td>
+                <tr class="hover:bg-[#f8fbfc]">
+                  <th scope="row" class="px-4 py-3.5 font-semibold text-samand-navy bg-[#fcfdfe]">Visitas preventivas en sitio</th>
+                  <td class="px-4 py-3.5">1 visita al mes</td>
+                  <td class="px-4 py-3.5 bg-[#11c6ea08]">2 visitas al mes</td>
+                  <td class="px-4 py-3.5">4 visitas al mes (semanal)</td>
                 </tr>
-                <tr>
-                  <th scope="row">Visitas por emergencia</th>
-                  <td><span class="cmp-status is-cond"><i>◐</i> Bajo tarifa preferencial</span></td>
-                  <td class="col-featured"><span class="cmp-status is-yes"><i>✓</i> 2 incluidas al mes</span></td>
-                  <td><span class="cmp-status is-yes"><i>✓</i> Ilimitadas</span></td>
+                <tr class="hover:bg-[#f8fbfc]">
+                  <th scope="row" class="px-4 py-3.5 font-semibold text-samand-navy bg-[#fcfdfe]">Visitas por emergencia</th>
+                  <td class="px-4 py-3.5"><span class="inline-flex items-center gap-1.5 font-semibold text-[#095b6e]"><i class="inline-grid place-items-center w-4.5 h-4.5 rounded-full not-italic text-[10px] font-bold bg-[#11c6ea24] text-[#09697f]">◐</i> Bajo tarifa preferencial</span></td>
+                  <td class="px-4 py-3.5 bg-[#11c6ea08]"><span class="inline-flex items-center gap-1.5 font-semibold text-[#0d524c]"><i class="inline-grid place-items-center w-4.5 h-4.5 rounded-full not-italic text-[10px] font-bold bg-[#00877d1c] text-samand-teal-text">✓</i> 2 incluidas al mes</span></td>
+                  <td class="px-4 py-3.5"><span class="inline-flex items-center gap-1.5 font-semibold text-[#0d524c]"><i class="inline-grid place-items-center w-4.5 h-4.5 rounded-full not-italic text-[10px] font-bold bg-[#00877d1c] text-samand-teal-text">✓</i> Ilimitadas</span></td>
                 </tr>
-                <tr>
-                  <th scope="row">Soporte remoto y mesa de ayuda</th>
-                  <td><span class="cmp-status is-yes"><i>✓</i> Incluido</span></td>
-                  <td class="col-featured"><span class="cmp-status is-yes"><i>✓</i> Prioritario</span></td>
-                  <td><span class="cmp-status is-yes"><i>✓</i> Dedicado</span></td>
+                <tr class="hover:bg-[#f8fbfc]">
+                  <th scope="row" class="px-4 py-3.5 font-semibold text-samand-navy bg-[#fcfdfe]">Monitoreo de infraestructura</th>
+                  <td class="px-4 py-3.5"><span class="inline-flex items-center gap-1.5 font-semibold text-[#095b6e]"><i class="inline-grid place-items-center w-4.5 h-4.5 rounded-full not-italic text-[10px] font-bold bg-[#11c6ea24] text-[#09697f]">◐</i> Monitoreo esencial (según plan)</span></td>
+                  <td class="px-4 py-3.5 bg-[#11c6ea08]"><span class="inline-flex items-center gap-1.5 font-semibold text-[#0d524c]"><i class="inline-grid place-items-center w-4.5 h-4.5 rounded-full not-italic text-[10px] font-bold bg-[#00877d1c] text-samand-teal-text">✓</i> Monitoreo proactivo (servidores, Internet y red)</span></td>
+                  <td class="px-4 py-3.5"><span class="inline-flex items-center gap-1.5 font-semibold text-[#0d524c]"><i class="inline-grid place-items-center w-4.5 h-4.5 rounded-full not-italic text-[10px] font-bold bg-[#00877d1c] text-samand-teal-text">✓</i> Monitoreo proactivo + personalizado</span></td>
                 </tr>
-                <tr>
-                  <th scope="row">Administración de red y Wi-Fi</th>
-                  <td><span class="cmp-status is-yes"><i>✓</i> Configuración básica</span></td>
-                  <td class="col-featured"><span class="cmp-status is-yes"><i>✓</i> Gestión proactiva</span></td>
-                  <td><span class="cmp-status is-yes"><i>✓</i> Gestión integral + VLAN/VPN</span></td>
+                <tr class="hover:bg-[#f8fbfc]">
+                  <th scope="row" class="px-4 py-3.5 font-semibold text-samand-navy bg-[#fcfdfe]">Sistema de inventario y documentación</th>
+                  <td class="px-4 py-3.5"><span class="inline-flex items-center gap-1.5 font-semibold text-[#095b6e]"><i class="inline-grid place-items-center w-4.5 h-4.5 rounded-full not-italic text-[10px] font-bold bg-[#11c6ea24] text-[#09697f]">◐</i> Gestión interna SAMANDTECH (sin acceso cliente)</span></td>
+                  <td class="px-4 py-3.5 bg-[#11c6ea08]"><span class="inline-flex items-center gap-1.5 font-semibold text-[#0d524c]"><i class="inline-grid place-items-center w-4.5 h-4.5 rounded-full not-italic text-[10px] font-bold bg-[#00877d1c] text-samand-teal-text">✓</i> Acceso del cliente a inventario tecnológico</span></td>
+                  <td class="px-4 py-3.5"><span class="inline-flex items-center gap-1.5 font-semibold text-[#0d524c]"><i class="inline-grid place-items-center w-4.5 h-4.5 rounded-full not-italic text-[10px] font-bold bg-[#00877d1c] text-samand-teal-text">✓</i> Acceso completo + auditoría continua</span></td>
                 </tr>
-                <tr>
-                  <th scope="row">Respaldos y bases de datos</th>
-                  <td><span class="cmp-status is-yes"><i>✓</i> Verificación mensual</span></td>
-                  <td class="col-featured"><span class="cmp-status is-yes"><i>✓</i> Gestión + pruebas de restauración</span></td>
-                  <td><span class="cmp-status is-yes"><i>✓</i> Automatizado + continuidad</span></td>
+                <tr class="hover:bg-[#f8fbfc]">
+                  <th scope="row" class="px-4 py-3.5 font-semibold text-samand-navy bg-[#fcfdfe]">Croquis físico y topología de red</th>
+                  <td class="px-4 py-3.5"><span class="inline-flex items-center gap-1.5 font-medium text-samand-muted"><i class="inline-grid place-items-center w-4.5 h-4.5 rounded-full not-italic text-[10px] font-bold bg-[#7a88951c] text-samand-muted">—</i> No incluido</span></td>
+                  <td class="px-4 py-3.5 bg-[#11c6ea08]"><span class="inline-flex items-center gap-1.5 font-semibold text-[#0d524c]"><i class="inline-grid place-items-center w-4.5 h-4.5 rounded-full not-italic text-[10px] font-bold bg-[#00877d1c] text-samand-teal-text">✓</i> Croquis físico y topología de red</span></td>
+                  <td class="px-4 py-3.5"><span class="inline-flex items-center gap-1.5 font-semibold text-[#0d524c]"><i class="inline-grid place-items-center w-4.5 h-4.5 rounded-full not-italic text-[10px] font-bold bg-[#00877d1c] text-samand-teal-text">✓</i> Croquis físico, topología y documentación</span></td>
                 </tr>
-                <tr>
-                  <th scope="row">Monitoreo continuo y alertas</th>
-                  <td><span class="cmp-status is-no"><i>—</i> No incluido</span></td>
-                  <td class="col-featured"><span class="cmp-status is-yes"><i>✓</i> Servidores y enlaces</span></td>
-                  <td><span class="cmp-status is-yes"><i>✓</i> Personalizado + automatización</span></td>
+                <tr class="hover:bg-[#f8fbfc]">
+                  <th scope="row" class="px-4 py-3.5 font-semibold text-samand-navy bg-[#fcfdfe]">Soporte remoto y mesa de ayuda</th>
+                  <td class="px-4 py-3.5"><span class="inline-flex items-center gap-1.5 font-semibold text-[#0d524c]"><i class="inline-grid place-items-center w-4.5 h-4.5 rounded-full not-italic text-[10px] font-bold bg-[#00877d1c] text-samand-teal-text">✓</i> Incluido</span></td>
+                  <td class="px-4 py-3.5 bg-[#11c6ea08]"><span class="inline-flex items-center gap-1.5 font-semibold text-[#0d524c]"><i class="inline-grid place-items-center w-4.5 h-4.5 rounded-full not-italic text-[10px] font-bold bg-[#00877d1c] text-samand-teal-text">✓</i> Prioritario</span></td>
+                  <td class="px-4 py-3.5"><span class="inline-flex items-center gap-1.5 font-semibold text-[#0d524c]"><i class="inline-grid place-items-center w-4.5 h-4.5 rounded-full not-italic text-[10px] font-bold bg-[#00877d1c] text-samand-teal-text">✓</i> Dedicado</span></td>
                 </tr>
-                <tr>
-                  <th scope="row">Gestión de usuarios y accesos</th>
-                  <td><span class="cmp-status is-cond"><i>◐</i> Altas y bajas puntuales</span></td>
-                  <td class="col-featured"><span class="cmp-status is-yes"><i>✓</i> Correos, dominios y permisos</span></td>
-                  <td><span class="cmp-status is-yes"><i>✓</i> Control integral y políticas</span></td>
+                <tr class="hover:bg-[#f8fbfc]">
+                  <th scope="row" class="px-4 py-3.5 font-semibold text-samand-navy bg-[#fcfdfe]">Administración de red y Wi-Fi</th>
+                  <td class="px-4 py-3.5"><span class="inline-flex items-center gap-1.5 font-semibold text-[#0d524c]"><i class="inline-grid place-items-center w-4.5 h-4.5 rounded-full not-italic text-[10px] font-bold bg-[#00877d1c] text-samand-teal-text">✓</i> Configuración básica</span></td>
+                  <td class="px-4 py-3.5 bg-[#11c6ea08]"><span class="inline-flex items-center gap-1.5 font-semibold text-[#0d524c]"><i class="inline-grid place-items-center w-4.5 h-4.5 rounded-full not-italic text-[10px] font-bold bg-[#00877d1c] text-samand-teal-text">✓</i> Gestión proactiva</span></td>
+                  <td class="px-4 py-3.5"><span class="inline-flex items-center gap-1.5 font-semibold text-[#0d524c]"><i class="inline-grid place-items-center w-4.5 h-4.5 rounded-full not-italic text-[10px] font-bold bg-[#00877d1c] text-samand-teal-text">✓</i> Gestión integral + VLAN/VPN</span></td>
                 </tr>
-                <tr>
-                  <th scope="row">Soporte CCTV y acceso biométrico</th>
-                  <td><span class="cmp-status is-no"><i>—</i> Por proyecto</span></td>
-                  <td class="col-featured"><span class="cmp-status is-cond"><i>◐</i> Revisión operativa básica</span></td>
-                  <td><span class="cmp-status is-yes"><i>✓</i> Administración y mantenimiento</span></td>
+                <tr class="hover:bg-[#f8fbfc]">
+                  <th scope="row" class="px-4 py-3.5 font-semibold text-samand-navy bg-[#fcfdfe]">Respaldos y bases de datos</th>
+                  <td class="px-4 py-3.5"><span class="inline-flex items-center gap-1.5 font-semibold text-[#0d524c]"><i class="inline-grid place-items-center w-4.5 h-4.5 rounded-full not-italic text-[10px] font-bold bg-[#00877d1c] text-samand-teal-text">✓</i> Verificación mensual</span></td>
+                  <td class="px-4 py-3.5 bg-[#11c6ea08]"><span class="inline-flex items-center gap-1.5 font-semibold text-[#0d524c]"><i class="inline-grid place-items-center w-4.5 h-4.5 rounded-full not-italic text-[10px] font-bold bg-[#00877d1c] text-samand-teal-text">✓</i> Gestión + pruebas de restauración</span></td>
+                  <td class="px-4 py-3.5"><span class="inline-flex items-center gap-1.5 font-semibold text-[#0d524c]"><i class="inline-grid place-items-center w-4.5 h-4.5 rounded-full not-italic text-[10px] font-bold bg-[#00877d1c] text-samand-teal-text">✓</i> Automatizado + continuidad</span></td>
                 </tr>
-                <tr>
-                  <th scope="row">Inventario técnico e informes</th>
-                  <td><span class="cmp-status is-yes"><i>✓</i> Resumen ejecutivo mensual</span></td>
-                  <td class="col-featured"><span class="cmp-status is-yes"><i>✓</i> Inventario + métricas detalladas</span></td>
-                  <td><span class="cmp-status is-yes"><i>✓</i> Auditoría continua y roadmap</span></td>
+                <tr class="hover:bg-[#f8fbfc]">
+                  <th scope="row" class="px-4 py-3.5 font-semibold text-samand-navy bg-[#fcfdfe]">Gestión de usuarios y accesos</th>
+                  <td class="px-4 py-3.5"><span class="inline-flex items-center gap-1.5 font-semibold text-[#095b6e]"><i class="inline-grid place-items-center w-4.5 h-4.5 rounded-full not-italic text-[10px] font-bold bg-[#11c6ea24] text-[#09697f]">◐</i> Altas y bajas puntuales</span></td>
+                  <td class="px-4 py-3.5 bg-[#11c6ea08]"><span class="inline-flex items-center gap-1.5 font-semibold text-[#0d524c]"><i class="inline-grid place-items-center w-4.5 h-4.5 rounded-full not-italic text-[10px] font-bold bg-[#00877d1c] text-samand-teal-text">✓</i> Correos, dominios y permisos</span></td>
+                  <td class="px-4 py-3.5"><span class="inline-flex items-center gap-1.5 font-semibold text-[#0d524c]"><i class="inline-grid place-items-center w-4.5 h-4.5 rounded-full not-italic text-[10px] font-bold bg-[#00877d1c] text-samand-teal-text">✓</i> Control integral y políticas</span></td>
+                </tr>
+                <tr class="hover:bg-[#f8fbfc]">
+                  <th scope="row" class="px-4 py-3.5 font-semibold text-samand-navy bg-[#fcfdfe]">Soporte CCTV y acceso biométrico</th>
+                  <td class="px-4 py-3.5"><span class="inline-flex items-center gap-1.5 font-medium text-samand-muted"><i class="inline-grid place-items-center w-4.5 h-4.5 rounded-full not-italic text-[10px] font-bold bg-[#7a88951c] text-samand-muted">—</i> Por proyecto</span></td>
+                  <td class="px-4 py-3.5 bg-[#11c6ea08]"><span class="inline-flex items-center gap-1.5 font-semibold text-[#095b6e]"><i class="inline-grid place-items-center w-4.5 h-4.5 rounded-full not-italic text-[10px] font-bold bg-[#11c6ea24] text-[#09697f]">◐</i> Revisión operativa básica</span></td>
+                  <td class="px-4 py-3.5"><span class="inline-flex items-center gap-1.5 font-semibold text-[#0d524c]"><i class="inline-grid place-items-center w-4.5 h-4.5 rounded-full not-italic text-[10px] font-bold bg-[#00877d1c] text-samand-teal-text">✓</i> Administración y mantenimiento</span></td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        <p class="plan-note">Tarifas expresadas en USD como referencia mensual. El valor final puede ajustarse según cantidad de sedes, complejidad de servidores o requerimientos específicos tras el diagnóstico inicial. Todos los planes operan bajo acuerdo de nivel de servicio (SLA) definido antes de iniciar.</p>
+        <p class="text-xs leading-[1.75] max-w-[920px] text-samand-slate mt-6">
+          Todos los planes se cotizan a la medida según cantidad de equipos, sedes, complejidad de servidores y requerimientos operativos levantados durante el diagnóstico inicial. El servicio opera bajo acuerdo de nivel de servicio (SLA) definido antes de iniciar.
+        </p>
+      </div>
+    </section>
+
+    <!-- PROYECTOS Y SERVICIOS PUNTUALES -->
+    <section id="proyectos" aria-labelledby="heading-proyectos" class="bg-[#f1f6f8] border-t border-[#dfe8ec] py-16 md:py-24">
+      <div class="w-[min(1240px,88%)] mx-auto">
+        <div class="bg-samand-navy text-white rounded-3xl p-7 sm:p-10 lg:p-14 border border-[#2f4556] shadow-2xl shadow-samand-navy/10 relative overflow-hidden">
+          <div class="hero-dots absolute inset-0 opacity-35 pointer-events-none" aria-hidden="true"></div>
+
+          <div class="relative z-10">
+            <div class="flex flex-col lg:flex-row justify-between lg:items-end gap-6 lg:gap-12 pb-9 mb-9 border-b border-white/12">
+              <div class="max-w-2xl">
+                <div class="inline-flex items-center gap-3 text-[11px] tracking-[2.4px] uppercase font-semibold text-samand-cyan">
+                  <span class="w-6 h-[2px] bg-samand-cyan" aria-hidden="true"></span>
+                  <span>Modalidad por alcance</span>
+                </div>
+                <h2 id="heading-proyectos" class="font-brand text-3xl sm:text-4xl lg:text-[42px] font-semibold tracking-[-1.2px] leading-[1.15] mt-4 mb-4 text-white">
+                  Proyectos y servicios puntuales
+                </h2>
+                <p class="text-[#c5d7e0] text-sm md:text-[15.5px] leading-[1.8] m-0">
+                  ¿Necesitas resolver una implementación específica sin asumir un contrato mensual? Ejecutamos proyectos tecnológicos por alcance definido, desde adecuaciones físicas hasta despliegue de infraestructura, sujetos a evaluación técnica y cotización previa.
+                </p>
+              </div>
+
+              <div class="flex flex-col sm:flex-row lg:flex-col items-start sm:items-center lg:items-end gap-3 shrink-0">
+                <span class="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-wider text-[#d8f6fc] bg-samand-cyan/12 border border-samand-cyan/30 px-3.5 py-1.5 rounded-full">
+                  <span class="w-1.5 h-1.5 rounded-full bg-samand-cyan" aria-hidden="true"></span>
+                  Sin compromiso de mensualidad
+                </span>
+                <a href="#contacto" data-preset="Proyecto puntual / Por definir" class="inline-flex items-center justify-between gap-5 bg-samand-cyan hover:bg-[#46d8f3] text-[#0e2530] px-5 py-3.5 rounded-lg text-xs md:text-sm font-bold transition-all hover:-translate-y-0.5 shadow-lg shadow-black/20">
+                  <span>Consultar por un proyecto</span>
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              <!-- Bloque 1 -->
+              <article class="project-card bg-[#16222e]/90 border border-[#314859] hover:border-samand-cyan/60 rounded-2xl p-6 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1">
+                <div>
+                  <div class="flex items-center justify-between gap-2 mb-4">
+                    <span class="text-[10.5px] font-semibold uppercase tracking-wider text-samand-cyan bg-samand-cyan/10 border border-samand-cyan/25 px-2.5 py-1 rounded-md">Conectividad física y lógica</span>
+                    <span class="font-mono text-xs text-[#8ea5b3]">01</span>
+                  </div>
+                  <h3 class="text-[17.5px] font-semibold text-white leading-snug mb-2.5">Cableado estructurado y redes</h3>
+                  <p class="text-[13px] text-[#bfd0da] leading-relaxed m-0">
+                    Tendido y ordenamiento de puntos de red, adecuación de racks, instalación de switches, cobertura Wi-Fi empresarial y segmentación de red para oficinas, locales o nuevas sedes.
+                  </p>
+                </div>
+                <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[12px]">
+                  <span class="text-[#94abb8]">Sujeto a levantamiento en sitio</span>
+                  <a href="#contacto" data-preset="Proyecto: Cableado y redes" class="font-semibold text-samand-cyan hover:text-white transition-colors">Cotizar →</a>
+                </div>
+              </article>
+
+              <!-- Bloque 2 -->
+              <article class="project-card bg-[#16222e]/90 border border-[#314859] hover:border-samand-cyan/60 rounded-2xl p-6 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1">
+                <div>
+                  <div class="flex items-center justify-between gap-2 mb-4">
+                    <span class="text-[10.5px] font-semibold uppercase tracking-wider text-samand-cyan bg-samand-cyan/10 border border-samand-cyan/25 px-2.5 py-1 rounded-md">Cómputo y datos</span>
+                    <span class="font-mono text-xs text-[#8ea5b3]">02</span>
+                  </div>
+                  <h3 class="text-[17.5px] font-semibold text-white leading-snug mb-2.5">Proyectos de servidores y almacenamiento</h3>
+                  <p class="text-[13px] text-[#bfd0da] leading-relaxed m-0">
+                    Despliegue, migración o reestructuración de servidores locales, virtualización, almacenamiento compartido, control de dominios y esquemas iniciales de respaldo.
+                  </p>
+                </div>
+                <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[12px]">
+                  <span class="text-[#94abb8]">Sujeto a evaluación técnica</span>
+                  <a href="#contacto" data-preset="Proyecto: Servidores y almacenamiento" class="font-semibold text-samand-cyan hover:text-white transition-colors">Cotizar →</a>
+                </div>
+              </article>
+
+              <!-- Bloque 3 -->
+              <article class="project-card bg-[#16222e]/90 border border-[#314859] hover:border-samand-cyan/60 rounded-2xl p-6 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1">
+                <div>
+                  <div class="flex items-center justify-between gap-2 mb-4">
+                    <span class="text-[10.5px] font-semibold uppercase tracking-wider text-samand-cyan bg-samand-cyan/10 border border-samand-cyan/25 px-2.5 py-1 rounded-md">Modernización</span>
+                    <span class="font-mono text-xs text-[#8ea5b3]">03</span>
+                  </div>
+                  <h3 class="text-[17.5px] font-semibold text-white leading-snug mb-2.5">Implementación o actualización de infraestructura</h3>
+                  <p class="text-[13px] text-[#bfd0da] leading-relaxed m-0">
+                    Renovación de plataforma tecnológica obsoleta, apertura de nuevas sucursales, traslado de oficinas y reorganización de servicios críticos con planificación por etapas.
+                  </p>
+                </div>
+                <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[12px]">
+                  <span class="text-[#94abb8]">Sujeto a evaluación técnica</span>
+                  <a href="#contacto" data-preset="Proyecto: Actualización de infraestructura" class="font-semibold text-samand-cyan hover:text-white transition-colors">Cotizar →</a>
+                </div>
+              </article>
+
+              <!-- Bloque 4 -->
+              <article class="project-card bg-[#16222e]/90 border border-[#314859] hover:border-samand-cyan/60 rounded-2xl p-6 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1">
+                <div>
+                  <div class="flex items-center justify-between gap-2 mb-4">
+                    <span class="text-[10.5px] font-semibold uppercase tracking-wider text-samand-cyan bg-samand-cyan/10 border border-samand-cyan/25 px-2.5 py-1 rounded-md">Despliegue de puestos</span>
+                    <span class="font-mono text-xs text-[#8ea5b3]">04</span>
+                  </div>
+                  <h3 class="text-[17.5px] font-semibold text-white leading-snug mb-2.5">Instalación y configuración de equipos</h3>
+                  <p class="text-[13px] text-[#bfd0da] leading-relaxed m-0">
+                    Puesta en marcha por lotes de computadoras, portátiles, impresoras en red, periféricos y software operativo estandarizado para jornadas de dotación o expansión de personal.
+                  </p>
+                </div>
+                <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[12px]">
+                  <span class="text-[#94abb8]">Por lote o requerimiento</span>
+                  <a href="#contacto" data-preset="Proyecto: Instalación de equipos" class="font-semibold text-samand-cyan hover:text-white transition-colors">Cotizar →</a>
+                </div>
+              </article>
+
+              <!-- Bloque 5 -->
+              <article class="project-card bg-[#16222e]/90 border border-[#314859] hover:border-samand-cyan/60 rounded-2xl p-6 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1">
+                <div>
+                  <div class="flex items-center justify-between gap-2 mb-4">
+                    <span class="text-[10.5px] font-semibold uppercase tracking-wider text-samand-cyan bg-samand-cyan/10 border border-samand-cyan/25 px-2.5 py-1 rounded-md">Videovigilancia</span>
+                    <span class="font-mono text-xs text-[#8ea5b3]">05</span>
+                  </div>
+                  <h3 class="text-[17.5px] font-semibold text-white leading-snug mb-2.5">Instalación y configuración de CCTV</h3>
+                  <p class="text-[13px] text-[#bfd0da] leading-relaxed m-0">
+                    Diseño de cobertura, montaje de cámaras IP o analógicas, configuración de grabadores, almacenamiento de video y acceso remoto seguro para supervisión gerencial.
+                  </p>
+                </div>
+                <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[12px]">
+                  <span class="text-[#94abb8]">Sujeto a inspección en sitio</span>
+                  <a href="#contacto" data-preset="Proyecto: Instalación de CCTV" class="font-semibold text-samand-cyan hover:text-white transition-colors">Cotizar →</a>
+                </div>
+              </article>
+
+              <!-- Bloque 6 -->
+              <article class="project-card bg-[#16222e]/90 border border-[#314859] hover:border-samand-cyan/60 rounded-2xl p-6 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1">
+                <div>
+                  <div class="flex items-center justify-between gap-2 mb-4">
+                    <span class="text-[10.5px] font-semibold uppercase tracking-wider text-samand-cyan bg-samand-cyan/10 border border-samand-cyan/25 px-2.5 py-1 rounded-md">Evaluación técnica</span>
+                    <span class="font-mono text-xs text-[#8ea5b3]">06</span>
+                  </div>
+                  <h3 class="text-[17.5px] font-semibold text-white leading-snug mb-2.5">Asesoría y diagnóstico de infraestructura</h3>
+                  <p class="text-[13px] text-[#bfd0da] leading-relaxed m-0">
+                    Levantamiento técnico del estado actual de tus redes, servidores, respaldos y equipamiento para entregarte un informe objetivo con hallazgos, riesgos y prioridades de mejora.
+                  </p>
+                </div>
+                <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[12px]">
+                  <span class="text-[#94abb8]">Entregable: informe técnico</span>
+                  <a href="#contacto" data-preset="Proyecto: Asesoría y diagnóstico" class="font-semibold text-samand-cyan hover:text-white transition-colors">Cotizar →</a>
+                </div>
+              </article>
+            </div>
+
+            <div class="mt-9 pt-7 border-t border-white/12 flex flex-col md:flex-row justify-between items-start md:items-center gap-5">
+              <p class="text-xs text-[#a9c0cc] leading-relaxed max-w-2xl m-0">
+                Todos los proyectos puntuales se cotizan a la medida tras una evaluación técnica inicial donde definimos alcance, materiales requeridos y etapas de ejecución. Si posteriormente deseas soporte continuo, puedes migrar a cualquiera de nuestros planes mensuales.
+              </p>
+              <a href="#contacto" data-preset="Proyecto puntual / Por definir" class="inline-flex items-center gap-3 border border-samand-cyan/60 hover:bg-samand-cyan hover:text-samand-navy text-samand-cyan px-5 py-3 rounded-lg text-xs font-bold tracking-wide transition-all shrink-0">
+                <span>Consultar por un proyecto</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- CÓMO TRABAJAMOS -->
-    <section class="process" id="proceso" aria-labelledby="heading-proceso">
-      <div class="wrap">
-        <div class="section-head">
+    <section id="proceso" aria-labelledby="heading-proceso" class="bg-[#edf3f5] py-16 md:py-28">
+      <div class="w-[min(1240px,88%)] mx-auto">
+        <div class="section-head flex flex-col md:flex-row justify-between md:items-end gap-6 md:gap-14 mb-12">
           <div>
-            <div class="eyebrow">Cómo trabajamos</div>
-            <h2 id="heading-proceso">Proceso ordenado desde el primer contacto.</h2>
+            <div class="inline-flex items-center gap-3 text-[11px] tracking-[2.4px] uppercase font-semibold text-samand-teal-text">
+              <span class="w-6 h-[2px] bg-samand-cyan" aria-hidden="true"></span>
+              <span>Cómo trabajamos</span>
+            </div>
+            <h2 id="heading-proceso" class="font-brand text-3xl sm:text-4xl lg:text-[46px] font-semibold tracking-[-1.2px] leading-[1.15] mt-5 mb-0 text-samand-navy">
+              Proceso ordenado desde el primer contacto.
+            </h2>
           </div>
-          <p>Un flujo claro de trabajo permite diagnosticar correctamente, cotizar sin ambigüedades y mantener control de cada intervención.</p>
+          <p class="max-w-[380px] text-[#465a65] leading-[1.8] text-sm md:text-[14.5px] m-0">
+            Un flujo claro de trabajo permite diagnosticar correctamente, cotizar sin ambigüedades y mantener control de cada intervención.
+          </p>
         </div>
 
-        <div class="steps">
-          <div>
-            <span>PASO 01</span>
-            <h3>Diagnóstico</h3>
-            <p>Levantamos el estado actual de tus equipos, redes, respaldos y necesidades operativas.</p>
+        <div class="steps grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="border-t border-[#cedde3] pt-6">
+            <span class="text-samand-teal-text font-semibold text-xs">PASO 01</span>
+            <h3 class="text-base md:text-[17px] font-semibold mt-5 mb-3 text-samand-navy">Diagnóstico</h3>
+            <p class="text-[13.5px] text-[#4f636e] leading-[1.8] m-0">Levantamos el estado actual de tus equipos, redes, respaldos y necesidades operativas.</p>
           </div>
-          <div>
-            <span>PASO 02</span>
-            <h3>Propuesta clara</h3>
-            <p>Definimos alcance, tiempos, recomendaciones y modalidad de servicio o proyecto.</p>
+          <div class="border-t border-[#cedde3] pt-6">
+            <span class="text-samand-teal-text font-semibold text-xs">PASO 02</span>
+            <h3 class="text-base md:text-[17px] font-semibold mt-5 mb-3 text-samand-navy">Propuesta clara</h3>
+            <p class="text-[13.5px] text-[#4f636e] leading-[1.8] m-0">Definimos alcance, tiempos, recomendaciones y modalidad de servicio o proyecto.</p>
           </div>
-          <div>
-            <span>PASO 03</span>
-            <h3>Ejecución</h3>
-            <p>Implementamos mejoras, configuraciones o mantenimiento con mínimo impacto operativo.</p>
+          <div class="border-t border-[#cedde3] pt-6">
+            <span class="text-samand-teal-text font-semibold text-xs">PASO 03</span>
+            <h3 class="text-base md:text-[17px] font-semibold mt-5 mb-3 text-samand-navy">Ejecución</h3>
+            <p class="text-[13.5px] text-[#4f636e] leading-[1.8] m-0">Implementamos mejoras, configuraciones o mantenimiento con mínimo impacto operativo.</p>
           </div>
-          <div>
-            <span>PASO 04</span>
-            <h3>Seguimiento</h3>
-            <p>Documentamos lo realizado y mantenemos monitoreo o soporte según lo acordado.</p>
+          <div class="border-t border-[#cedde3] pt-6">
+            <span class="text-samand-teal-text font-semibold text-xs">PASO 04</span>
+            <h3 class="text-base md:text-[17px] font-semibold mt-5 mb-3 text-samand-navy">Seguimiento</h3>
+            <p class="text-[13.5px] text-[#4f636e] leading-[1.8] m-0">Documentamos lo realizado y mantenemos monitoreo o soporte según lo acordado.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIENTES / CONFIANZA (5 ESPACIOS PREPARADOS PARA ASSETS) -->
+    <section id="clientes" aria-labelledby="heading-clientes" class="bg-[#f8fafb] border-t border-[#dfe8ec] py-20 md:py-28 text-samand-navy">
+      <div class="w-[min(1240px,88%)] mx-auto">
+        <header class="max-w-2xl mx-auto text-center mb-12">
+          <div class="inline-flex items-center justify-center gap-3 text-[11px] tracking-[2.4px] uppercase font-semibold text-samand-teal-text mb-4">
+            <span class="w-6 h-[2px] bg-samand-cyan" aria-hidden="true"></span>
+            <span>Trayectoria y respaldo</span>
+          </div>
+
+          <h2 id="heading-clientes" class="font-brand text-3xl sm:text-4xl lg:text-[42px] font-semibold tracking-[-1.2px] leading-[1.15] text-samand-navy mb-5">
+            Empresas que confían en nuestra tecnología
+          </h2>
+
+          <p class="text-sm sm:text-base leading-relaxed text-samand-slate">
+            Acompañamos a organizaciones reales en la operación, continuidad y soporte de su infraestructura tecnológica.
+          </p>
+        </header>
+
+        <ul data-client-slots="5" aria-label="Organizaciones atendidas por SAMANDTECH" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-5 list-none p-0 m-0">
+          <!-- SLOT 1 -->
+          <li data-client-slot="1" data-authorized="false" class="flex">
+            <div data-client-name="" class="w-full min-h-[116px] px-6 py-5 bg-white border border-[#dbe5e9] rounded-xl flex items-center justify-center transition-all duration-200 hover:border-[#9dc2cb] hover:shadow-sm">
+              <!-- <img src="assets/NOMBRE-LOGO-1.svg" alt="Logotipo de [Nombre del Cliente]" loading="lazy" class="block max-w-full max-h-12 w-auto h-auto object-contain"> -->
+              <span aria-hidden="true" class="text-xs font-medium tracking-wide text-samand-slate px-3.5 py-1.5 border border-dashed border-[#cedde3] rounded-md">
+                Espacio cliente 01
+              </span>
+            </div>
+          </li>
+
+          <!-- SLOT 2 -->
+          <li data-client-slot="2" data-authorized="false" class="flex">
+            <div data-client-name="" class="w-full min-h-[116px] px-6 py-5 bg-white border border-[#dbe5e9] rounded-xl flex items-center justify-center transition-all duration-200 hover:border-[#9dc2cb] hover:shadow-sm">
+              <!-- <img src="assets/NOMBRE-LOGO-2.svg" alt="Logotipo de [Nombre del Cliente]" loading="lazy" class="block max-w-full max-h-12 w-auto h-auto object-contain"> -->
+              <span aria-hidden="true" class="text-xs font-medium tracking-wide text-samand-slate px-3.5 py-1.5 border border-dashed border-[#cedde3] rounded-md">
+                Espacio cliente 02
+              </span>
+            </div>
+          </li>
+
+          <!-- SLOT 3 -->
+          <li data-client-slot="3" data-authorized="false" class="flex">
+            <div data-client-name="" class="w-full min-h-[116px] px-6 py-5 bg-white border border-[#dbe5e9] rounded-xl flex items-center justify-center transition-all duration-200 hover:border-[#9dc2cb] hover:shadow-sm">
+              <!-- <img src="assets/NOMBRE-LOGO-3.svg" alt="Logotipo de [Nombre del Cliente]" loading="lazy" class="block max-w-full max-h-12 w-auto h-auto object-contain"> -->
+              <span aria-hidden="true" class="text-xs font-medium tracking-wide text-samand-slate px-3.5 py-1.5 border border-dashed border-[#cedde3] rounded-md">
+                Espacio cliente 03
+              </span>
+            </div>
+          </li>
+
+          <!-- SLOT 4 -->
+          <li data-client-slot="4" data-authorized="false" class="flex">
+            <div data-client-name="" class="w-full min-h-[116px] px-6 py-5 bg-white border border-[#dbe5e9] rounded-xl flex items-center justify-center transition-all duration-200 hover:border-[#9dc2cb] hover:shadow-sm">
+              <!-- <img src="assets/NOMBRE-LOGO-4.svg" alt="Logotipo de [Nombre del Cliente]" loading="lazy" class="block max-w-full max-h-12 w-auto h-auto object-contain"> -->
+              <span aria-hidden="true" class="text-xs font-medium tracking-wide text-samand-slate px-3.5 py-1.5 border border-dashed border-[#cedde3] rounded-md">
+                Espacio cliente 04
+              </span>
+            </div>
+          </li>
+
+          <!-- SLOT 5 -->
+          <li data-client-slot="5" data-authorized="false" class="flex sm:col-span-2 lg:col-span-1">
+            <div data-client-name="" class="w-full min-h-[116px] px-6 py-5 bg-white border border-[#dbe5e9] rounded-xl flex items-center justify-center transition-all duration-200 hover:border-[#9dc2cb] hover:shadow-sm">
+              <!-- <img src="assets/NOMBRE-LOGO-5.svg" alt="Logotipo de [Nombre del Cliente]" loading="lazy" class="block max-w-full max-h-12 w-auto h-auto object-contain"> -->
+              <span aria-hidden="true" class="text-xs font-medium tracking-wide text-samand-slate px-3.5 py-1.5 border border-dashed border-[#cedde3] rounded-md">
+                Espacio cliente 05
+              </span>
+            </div>
+          </li>
+        </ul>
+
+        <p class="mt-6 text-center text-xs text-samand-slate">
+          Se muestran únicamente las organizaciones con autorización expresa para su publicación.
+        </p>
+      </div>
+    </section>
+
+    <!-- PREGUNTAS FRECUENTES (FAQ) -->
+    <section id="faq" aria-labelledby="heading-faq" class="bg-[#edf3f5] border-t border-[#dfe8ec] py-16 md:py-24">
+      <div class="w-[min(1240px,88%)] mx-auto grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-10 lg:gap-16 items-start">
+        <div class="lg:sticky lg:top-28">
+          <div class="inline-flex items-center gap-3 text-[11px] tracking-[2.4px] uppercase font-semibold text-samand-teal-text">
+            <span class="w-6 h-[2px] bg-samand-cyan" aria-hidden="true"></span>
+            <span>Preguntas frecuentes</span>
+          </div>
+          <h2 id="heading-faq" class="font-brand text-3xl sm:text-4xl lg:text-[42px] font-semibold tracking-[-1.2px] leading-[1.15] mt-5 mb-5 text-samand-navy">
+            Resolvemos tus dudas antes de iniciar.
+          </h2>
+          <p class="text-sm md:text-[15px] text-[#465a65] leading-[1.8] mb-6">
+            Respuestas directas sobre cómo operan nuestros planes mensuales, proyectos puntuales, sistemas propios y alcance comercial.
+          </p>
+          <div class="p-5 bg-white border border-[#dbe5e9] rounded-xl">
+            <p class="text-[13px] font-semibold text-samand-navy mb-1.5">¿Tienes un caso particular?</p>
+            <p class="text-xs text-[#4f636e] leading-relaxed mb-3.5">
+              Si tu empresa opera con múltiples sedes o requerimientos específicos, lo revisamos en el diagnóstico inicial.
+            </p>
+            <a href="#contacto" data-preset="diagnostico" class="inline-flex items-center gap-2 text-xs font-bold text-samand-teal-text hover:text-samand-navy transition-colors">
+              <span>Hacer una consulta directa</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="faq-list grid gap-3" data-faq-accordion>
+          <!-- 01 -->
+          <div class="faq-item bg-white border border-[#dbe5e9] rounded-xl overflow-hidden transition-colors">
+            <h3 class="m-0 text-[15px] md:text-base font-semibold text-samand-navy">
+              <button type="button" id="faq-btn-1" aria-expanded="true" aria-controls="faq-panel-1" class="faq-trigger w-full text-left px-5 py-4 md:px-6 md:py-5 flex items-center justify-between gap-4 cursor-pointer hover:bg-[#f8fbfc] transition-colors">
+                <span>1. ¿Puedo contratar soporte sin un plan mensual?</span>
+                <span class="faq-icon w-7 h-7 rounded-lg bg-[#f0f6f8] border border-[#dce8ed] text-samand-teal-text grid place-items-center shrink-0 text-sm font-bold transition-transform duration-200 rotate-45" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div id="faq-panel-1" role="region" aria-labelledby="faq-btn-1" class="faq-panel px-5 pb-5 md:px-6 md:pb-5 text-[13.5px] text-[#465a65] leading-[1.75] border-t border-[#eef4f6]">
+              <p class="m-0 pt-3.5">
+                Sí. Atendemos proyectos y servicios puntuales por alcance definido sin exigir una suscripción mensual. La modalidad de atención para emergencias aisladas sin contrato queda sujeta a disponibilidad y cotización previa.
+              </p>
+            </div>
+          </div>
+
+          <!-- 02 -->
+          <div class="faq-item bg-white border border-[#dbe5e9] rounded-xl overflow-hidden transition-colors">
+            <h3 class="m-0 text-[15px] md:text-base font-semibold text-samand-navy">
+              <button type="button" id="faq-btn-2" aria-expanded="false" aria-controls="faq-panel-2" class="faq-trigger w-full text-left px-5 py-4 md:px-6 md:py-5 flex items-center justify-between gap-4 cursor-pointer hover:bg-[#f8fbfc] transition-colors">
+                <span>2. ¿Qué sucede si mi empresa supera la cantidad de equipos incluida?</span>
+                <span class="faq-icon w-7 h-7 rounded-lg bg-[#f0f6f8] border border-[#dce8ed] text-samand-teal-text grid place-items-center shrink-0 text-sm font-bold transition-transform duration-200" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div id="faq-panel-2" role="region" aria-labelledby="faq-btn-2" hidden class="faq-panel px-5 pb-5 md:px-6 md:pb-5 text-[13.5px] text-[#465a65] leading-[1.75] border-t border-[#eef4f6]">
+              <p class="m-0 pt-3.5">
+                Puedes incorporar equipos adicionales manteniendo tu mismo plan mediante un ajuste unitario mensual cotizado según tu nivel de cobertura, o migrar al siguiente plan si la ampliación de tu infraestructura lo requiere.
+              </p>
+            </div>
+          </div>
+
+          <!-- 03 -->
+          <div class="faq-item bg-white border border-[#dbe5e9] rounded-xl overflow-hidden transition-colors">
+            <h3 class="m-0 text-[15px] md:text-base font-semibold text-samand-navy">
+              <button type="button" id="faq-btn-3" aria-expanded="false" aria-controls="faq-panel-3" class="faq-trigger w-full text-left px-5 py-4 md:px-6 md:py-5 flex items-center justify-between gap-4 cursor-pointer hover:bg-[#f8fbfc] transition-colors">
+                <span>3. ¿El hardware, los repuestos y las licencias están incluidos?</span>
+                <span class="faq-icon w-7 h-7 rounded-lg bg-[#f0f6f8] border border-[#dce8ed] text-samand-teal-text grid place-items-center shrink-0 text-sm font-bold transition-transform duration-200" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div id="faq-panel-3" role="region" aria-labelledby="faq-btn-3" hidden class="faq-panel px-5 pb-5 md:px-6 md:pb-5 text-[13.5px] text-[#465a65] leading-[1.75] border-t border-[#eef4f6]">
+              <p class="m-0 pt-3.5">
+                Los planes cubren la gestión técnica, soporte y mantenimiento. El suministro o compra de hardware, repuestos, materiales de red y licencias de software no está incluido por defecto y su modalidad de adquisición queda <strong>pendiente de confirmación</strong> en cada cotización o alcance técnico.
+              </p>
+            </div>
+          </div>
+
+          <!-- 04 -->
+          <div class="faq-item bg-white border border-[#dbe5e9] rounded-xl overflow-hidden transition-colors">
+            <h3 class="m-0 text-[15px] md:text-base font-semibold text-samand-navy">
+              <button type="button" id="faq-btn-4" aria-expanded="false" aria-controls="faq-panel-4" class="faq-trigger w-full text-left px-5 py-4 md:px-6 md:py-5 flex items-center justify-between gap-4 cursor-pointer hover:bg-[#f8fbfc] transition-colors">
+                <span>4. ¿El servicio es remoto o presencial?</span>
+                <span class="faq-icon w-7 h-7 rounded-lg bg-[#f0f6f8] border border-[#dce8ed] text-samand-teal-text grid place-items-center shrink-0 text-sm font-bold transition-transform duration-200" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div id="faq-panel-4" role="region" aria-labelledby="faq-btn-4" hidden class="faq-panel px-5 pb-5 md:px-6 md:pb-5 text-[13.5px] text-[#465a65] leading-[1.75] border-t border-[#eef4f6]">
+              <p class="m-0 pt-3.5">
+                Trabajamos en modalidad híbrida: atendemos incidencias diarias de forma remota para dar respuesta ágil y realizamos visitas presenciales en sitio para mantenimiento preventivo, instalaciones físicas y emergencias según el plan o proyecto contratado.
+              </p>
+            </div>
+          </div>
+
+          <!-- 05 -->
+          <div class="faq-item bg-white border border-[#dbe5e9] rounded-xl overflow-hidden transition-colors">
+            <h3 class="m-0 text-[15px] md:text-base font-semibold text-samand-navy">
+              <button type="button" id="faq-btn-5" aria-expanded="false" aria-controls="faq-panel-5" class="faq-trigger w-full text-left px-5 py-4 md:px-6 md:py-5 flex items-center justify-between gap-4 cursor-pointer hover:bg-[#f8fbfc] transition-colors">
+                <span>5. ¿Pueden trabajar con una empresa que ya tiene técnico interno?</span>
+                <span class="faq-icon w-7 h-7 rounded-lg bg-[#f0f6f8] border border-[#dce8ed] text-samand-teal-text grid place-items-center shrink-0 text-sm font-bold transition-transform duration-200" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div id="faq-panel-5" role="region" aria-labelledby="faq-btn-5" hidden class="faq-panel px-5 pb-5 md:px-6 md:pb-5 text-[13.5px] text-[#465a65] leading-[1.75] border-t border-[#eef4f6]">
+              <p class="m-0 pt-3.5">
+                Sí. Operamos tanto como departamento externo para empresas sin personal de sistemas como complemento especializado para equipos IT internos que requieren respaldo en servidores, redes, respaldos o proyectos puntuales.
+              </p>
+            </div>
+          </div>
+
+          <!-- 06 -->
+          <div class="faq-item bg-white border border-[#dbe5e9] rounded-xl overflow-hidden transition-colors">
+            <h3 class="m-0 text-[15px] md:text-base font-semibold text-samand-navy">
+              <button type="button" id="faq-btn-6" aria-expanded="false" aria-controls="faq-panel-6" class="faq-trigger w-full text-left px-5 py-4 md:px-6 md:py-5 flex items-center justify-between gap-4 cursor-pointer hover:bg-[#f8fbfc] transition-colors">
+                <span>6. ¿Cómo se realiza la evaluación inicial de infraestructura?</span>
+                <span class="faq-icon w-7 h-7 rounded-lg bg-[#f0f6f8] border border-[#dce8ed] text-samand-teal-text grid place-items-center shrink-0 text-sm font-bold transition-transform duration-200" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div id="faq-panel-6" role="region" aria-labelledby="faq-btn-6" hidden class="faq-panel px-5 pb-5 md:px-6 md:pb-5 text-[13.5px] text-[#465a65] leading-[1.75] border-t border-[#eef4f6]">
+              <p class="m-0 pt-3.5">
+                Iniciamos con un levantamiento técnico de tus equipos, redes, servidores, respaldos y necesidades operativas para dimensionar el entorno real sin compromisos y entregarte una recomendación clara con el alcance propuesto.
+              </p>
+            </div>
+          </div>
+
+          <!-- 07 -->
+          <div class="faq-item bg-white border border-[#dbe5e9] rounded-xl overflow-hidden transition-colors">
+            <h3 class="m-0 text-[15px] md:text-base font-semibold text-samand-navy">
+              <button type="button" id="faq-btn-7" aria-expanded="false" aria-controls="faq-panel-7" class="faq-trigger w-full text-left px-5 py-4 md:px-6 md:py-5 flex items-center justify-between gap-4 cursor-pointer hover:bg-[#f8fbfc] transition-colors">
+                <span>7. ¿Qué sucede cuando se necesita una visita adicional?</span>
+                <span class="faq-icon w-7 h-7 rounded-lg bg-[#f0f6f8] border border-[#dce8ed] text-samand-teal-text grid place-items-center shrink-0 text-sm font-bold transition-transform duration-200" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div id="faq-panel-7" role="region" aria-labelledby="faq-btn-7" hidden class="faq-panel px-5 pb-5 md:px-6 md:pb-5 text-[13.5px] text-[#465a65] leading-[1.75] border-t border-[#eef4f6]">
+              <p class="m-0 pt-3.5">
+                Depende del plan activo: en el <strong>Plan Básico</strong>, las visitas urgentes o fuera de las preventivas programadas se atienden bajo tarifa preferencial; el <strong>Plan Avanzado</strong> incluye hasta 2 visitas de emergencia al mes; y el <strong>Plan Integral</strong> contempla emergencias ilimitadas.
+              </p>
+            </div>
+          </div>
+
+          <!-- 08 -->
+          <div class="faq-item bg-white border border-[#dbe5e9] rounded-xl overflow-hidden transition-colors">
+            <h3 class="m-0 text-[15px] md:text-base font-semibold text-samand-navy">
+              <button type="button" id="faq-btn-8" aria-expanded="false" aria-controls="faq-panel-8" class="faq-trigger w-full text-left px-5 py-4 md:px-6 md:py-5 flex items-center justify-between gap-4 cursor-pointer hover:bg-[#f8fbfc] transition-colors">
+                <span>8. ¿Cómo se protegen las credenciales y la información de los clientes?</span>
+                <span class="faq-icon w-7 h-7 rounded-lg bg-[#f0f6f8] border border-[#dce8ed] text-samand-teal-text grid place-items-center shrink-0 text-sm font-bold transition-transform duration-200" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div id="faq-panel-8" role="region" aria-labelledby="faq-btn-8" hidden class="faq-panel px-5 pb-5 md:px-6 md:pb-5 text-[13.5px] text-[#465a65] leading-[1.75] border-t border-[#eef4f6]">
+              <p class="m-0 pt-3.5">
+                Trabajamos con control de permisos por rol y esquemas de respaldo adaptados a cada empresa. Los protocolos específicos de custodia de credenciales y acuerdos formales de confidencialidad quedan <strong>pendientes de confirmación</strong> y se establecen por escrito antes de iniciar la operación.
+              </p>
+            </div>
+          </div>
+
+          <!-- 09 -->
+          <div class="faq-item bg-white border border-[#dbe5e9] rounded-xl overflow-hidden transition-colors">
+            <h3 class="m-0 text-[15px] md:text-base font-semibold text-samand-navy">
+              <button type="button" id="faq-btn-9" aria-expanded="false" aria-controls="faq-panel-9" class="faq-trigger w-full text-left px-5 py-4 md:px-6 md:py-5 flex items-center justify-between gap-4 cursor-pointer hover:bg-[#f8fbfc] transition-colors">
+                <span>9. ¿Puedo contratar servicios de CCTV, redes o cableado por separado?</span>
+                <span class="faq-icon w-7 h-7 rounded-lg bg-[#f0f6f8] border border-[#dce8ed] text-samand-teal-text grid place-items-center shrink-0 text-sm font-bold transition-transform duration-200" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div id="faq-panel-9" role="region" aria-labelledby="faq-btn-9" hidden class="faq-panel px-5 pb-5 md:px-6 md:pb-5 text-[13.5px] text-[#465a65] leading-[1.75] border-t border-[#eef4f6]">
+              <p class="m-0 pt-3.5">
+                Sí. La instalación y configuración de CCTV, control de acceso biométrico, cableado estructurado y despliegue de redes pueden contratarse de forma independiente bajo nuestra modalidad de proyectos puntuales, previa inspección y cotización.
+              </p>
+            </div>
+          </div>
+
+          <!-- 10 -->
+          <div class="faq-item bg-white border border-[#dbe5e9] rounded-xl overflow-hidden transition-colors">
+            <h3 class="m-0 text-[15px] md:text-base font-semibold text-samand-navy">
+              <button type="button" id="faq-btn-10" aria-expanded="false" aria-controls="faq-panel-10" class="faq-trigger w-full text-left px-5 py-4 md:px-6 md:py-5 flex items-center justify-between gap-4 cursor-pointer hover:bg-[#f8fbfc] transition-colors">
+                <span>10. ¿Cómo se determina el precio final del servicio?</span>
+                <span class="faq-icon w-7 h-7 rounded-lg bg-[#f0f6f8] border border-[#dce8ed] text-samand-teal-text grid place-items-center shrink-0 text-sm font-bold transition-transform duration-200" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div id="faq-panel-10" role="region" aria-labelledby="faq-btn-10" hidden class="faq-panel px-5 pb-5 md:px-6 md:pb-5 text-[13.5px] text-[#465a65] leading-[1.75] border-t border-[#eef4f6]">
+              <p class="m-0 pt-3.5">
+                Tanto en los planes mensuales como en los proyectos puntuales, el monto se define en una propuesta formal tras el diagnóstico inicial, considerando la cantidad de equipos, sedes, complejidad de servidores y nivel de SLA requerido.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CLIENTES -->
-    <section class="clients" id="clientes" aria-labelledby="heading-clientes">
-      <div class="wrap">
-        <div class="eyebrow">Confianza y trayectoria</div>
-        <h2 id="heading-clientes">Construyendo relaciones técnicas a largo plazo.</h2>
-        <div class="client-empty">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7l7-4z M9 12l2 2 4-4"/>
-          </svg>
-          <p>Esta sección está preparada para incorporar los logotipos y casos de éxito de las empresas que confían en SAMANDTECH conforme autoricen su publicación.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACTO & SOLICITUD DE DIAGNÓSTICO (MAQUETA VISUAL) -->
-    <section class="contact" id="contacto" aria-labelledby="heading-contacto">
-      <div class="wrap contact-grid">
-        <!-- Columna Izquierda: Propuesta de conversación + Espacios para canales oficiales -->
-        <div class="contact-info">
-          <div class="eyebrow">Hablemos de tu operación</div>
-          <h2 id="heading-contacto">Inicia una conversación técnica con nuestro equipo.</h2>
-          <p class="contact-lead">
+    <!-- CONTACTO & SOLICITUD DE DIAGNÓSTICO -->
+    <section id="contacto" aria-labelledby="heading-contacto" class="contact-bg text-white py-16 md:py-24 border-t border-samand-cyan/20">
+      <div class="w-[min(1240px,88%)] mx-auto grid grid-cols-1 lg:grid-cols-[0.92fr_1.08fr] gap-9 lg:gap-14 items-start">
+        <div>
+          <div class="inline-flex items-center gap-3 text-[11px] tracking-[2.4px] uppercase font-semibold text-samand-cyan">
+            <span class="w-6 h-[2px] bg-samand-cyan" aria-hidden="true"></span>
+            <span>Hablemos de tu operación</span>
+          </div>
+          <h2 id="heading-contacto" class="font-brand text-3xl sm:text-4xl lg:text-[44px] font-semibold tracking-[-1.2px] leading-[1.15] my-4 text-white">
+            Inicia una conversación técnica con nuestro equipo.
+          </h2>
+          <p class="text-[#cddbe2] leading-[1.8] text-sm md:text-[15.5px] mb-6">
             Solicita información, asesoría o un diagnóstico inicial de tu infraestructura tecnológica. Evaluamos el estado de tus equipos, redes y respaldos para entregarte una recomendación clara y ajustada a tu empresa.
           </p>
 
-          <ul class="contact-pillars">
-            <li>Diagnóstico inicial para dimensionar tu entorno real sin compromisos.</li>
-            <li>Alcance definido por plan mensual (MSP) o proyecto puntual.</li>
-            <li>Cobertura remota y atención presencial según requerimiento.</li>
+          <ul class="list-none p-0 mb-8 grid gap-3 text-[13.5px] leading-relaxed text-[#e4eff3]">
+            <li class="pl-6 relative before:content-['✓'] before:absolute before:left-0 before:text-samand-cyan before:font-bold">Diagnóstico inicial para dimensionar tu entorno real sin compromisos.</li>
+            <li class="pl-6 relative before:content-['✓'] before:absolute before:left-0 before:text-samand-cyan before:font-bold">Alcance definido por plan mensual (MSP) o proyecto puntual.</li>
+            <li class="pl-6 relative before:content-['✓'] before:absolute before:left-0 before:text-samand-cyan before:font-bold">Cobertura remota y atención presencial según requerimiento.</li>
           </ul>
 
-          <!-- Espacios visuales reservados para futuros canales oficiales -->
-          <div class="contact-channels" aria-label="Canales de atención corporativa">
-            <div class="channels-header">
-              <span class="channels-title">Canales directos de atención</span>
-              <span class="channels-badge">Próximamente</span>
+          <div aria-label="Canales de atención corporativa" class="bg-white/5 border border-[#7a889547] rounded-xl p-4 md:p-5">
+            <div class="flex justify-between items-center gap-3 mb-3.5 pb-3 border-b border-white/10">
+              <span class="text-[11.5px] font-semibold tracking-wider uppercase text-[#d6e4ea]">Canales directos de atención</span>
+              <span class="text-[10.5px] font-semibold tracking-wide text-samand-cyan bg-samand-cyan/15 border border-samand-cyan/30 px-2.5 py-0.5 rounded-full">Próximamente</span>
             </div>
 
-            <div class="channel-grid">
-              <div class="channel-slot">
-                <div class="channel-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" class="icon">
+            <div class="grid gap-2.5">
+              <div class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg bg-[#1e29378c] border border-dashed border-[#7a88956b]">
+                <div class="w-9 h-9 rounded-lg bg-samand-cyan/10 border border-samand-cyan/25 text-samand-cyan grid place-items-center shrink-0" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" class="w-4.5 h-4.5 stroke-current fill-none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M4 6h16v12H4z M4 7l8 6 8-6"/>
                   </svg>
                 </div>
-                <div class="channel-meta">
-                  <span class="channel-label">Correo corporativo</span>
-                  <span class="channel-placeholder">Canal oficial en configuración</span>
+                <div class="grid gap-0.5">
+                  <span class="text-[12.5px] font-semibold text-white">Correo corporativo</span>
+                  <span class="text-xs text-[#9cb0bc]">Canal oficial en configuración</span>
                 </div>
               </div>
 
-              <div class="channel-slot">
-                <div class="channel-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" class="icon">
+              <div class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg bg-[#1e29378c] border border-dashed border-[#7a88956b]">
+                <div class="w-9 h-9 rounded-lg bg-samand-cyan/10 border border-samand-cyan/25 text-samand-cyan grid place-items-center shrink-0" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" class="w-4.5 h-4.5 stroke-current fill-none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 11.5a8.5 8.5 0 0 1-12.5 7.5L3 20.5l1.5-5.5A8.5 8.5 0 1 1 21 11.5z"/>
                   </svg>
                 </div>
-                <div class="channel-meta">
-                  <span class="channel-label">WhatsApp empresarial</span>
-                  <span class="channel-placeholder">Línea comercial por habilitar</span>
+                <div class="grid gap-0.5">
+                  <span class="text-[12.5px] font-semibold text-white">WhatsApp empresarial</span>
+                  <span class="text-xs text-[#9cb0bc]">Línea comercial por habilitar</span>
                 </div>
               </div>
 
-              <div class="channel-slot">
-                <div class="channel-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" class="icon">
+              <div class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg bg-[#1e29378c] border border-dashed border-[#7a88956b]">
+                <div class="w-9 h-9 rounded-lg bg-samand-cyan/10 border border-samand-cyan/25 text-samand-cyan grid place-items-center shrink-0" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" class="w-4.5 h-4.5 stroke-current fill-none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M12 21s-6-5.3-6-10a6 6 0 1 1 12 0c0 4.7-6 10-6 10z M12 11m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"/>
                   </svg>
                 </div>
-                <div class="channel-meta">
-                  <span class="channel-label">Cobertura operativa</span>
-                  <span class="channel-placeholder">Atención remota y visitas en sitio</span>
+                <div class="grid gap-0.5">
+                  <span class="text-[12.5px] font-semibold text-white">Cobertura operativa</span>
+                  <span class="text-xs text-[#9cb0bc]">Atención remota y visitas en sitio</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Columna Derecha: Maqueta visual del formulario de diagnóstico -->
-        <div class="contact-card">
-          <div class="contact-card-head">
+        <!-- Formulario Visual -->
+        <div class="bg-white text-samand-navy rounded-2xl p-6 md:p-8 shadow-2xl border border-[#dbe5e9]">
+          <div class="flex flex-col sm:flex-row justify-between items-start gap-2.5 pb-4 mb-5 border-b border-[#e7eff2]">
             <div>
-              <h3>Solicitud de diagnóstico</h3>
-              <p>Completa los datos referenciales de tu empresa.</p>
+              <h3 class="text-xl font-semibold tracking-tight text-samand-navy mb-1">Solicitud de diagnóstico</h3>
+              <p class="text-[13px] text-[#52646f] m-0">Completa los datos referenciales de tu empresa.</p>
             </div>
-            <span class="preview-pill" title="Vista previa de interfaz">Vista previa UI</span>
+            <span class="text-[10.5px] font-semibold tracking-wide uppercase text-samand-teal-text bg-[#eaf6f5] border border-[#bfe2df] px-2.5 py-1 rounded-full whitespace-nowrap" title="Vista previa de interfaz">Vista previa UI</span>
           </div>
 
-          <form class="contact-form" action="#" method="post" onsubmit="return false;" aria-describedby="form-preview-note">
-            <div class="form-row">
-              <div class="form-field">
-                <label for="lead-name">Nombre y apellido</label>
-                <input id="lead-name" name="name" type="text" autocomplete="name" placeholder="Ej. Carlos Mendoza">
+          <form action="#" method="post" onsubmit="return false;" aria-describedby="form-preview-note" class="grid gap-3.5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              <div class="grid gap-1.5">
+                <label for="lead-name" class="text-xs font-semibold text-samand-navy">Nombre y apellido</label>
+                <input id="lead-name" name="name" type="text" autocomplete="name" placeholder="Ej. Carlos Mendoza" class="w-full bg-[#f8fafb] border border-[#cfdbe1] hover:border-[#9cb2bd] focus:bg-white focus:border-samand-teal focus:ring-3 focus:ring-samand-teal/15 rounded-lg px-3 py-2.5 text-base sm:text-[13.5px] font-normal text-samand-navy placeholder:text-[#7a8895] outline-none transition-all">
               </div>
 
-              <div class="form-field">
-                <label for="lead-company">Empresa</label>
-                <input id="lead-company" name="company" type="text" autocomplete="organization" placeholder="Nombre de tu organización">
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-field">
-                <label for="lead-email">Correo electrónico</label>
-                <input id="lead-email" name="email" type="email" autocomplete="email" placeholder="nombre@empresa.com">
-              </div>
-
-              <div class="form-field">
-                <label for="lead-phone">Teléfono o WhatsApp</label>
-                <input id="lead-phone" name="phone" type="tel" autocomplete="tel" placeholder="Código de área y número">
+              <div class="grid gap-1.5">
+                <label for="lead-company" class="text-xs font-semibold text-samand-navy">Empresa</label>
+                <input id="lead-company" name="company" type="text" autocomplete="organization" placeholder="Nombre de tu organización" class="w-full bg-[#f8fafb] border border-[#cfdbe1] hover:border-[#9cb2bd] focus:bg-white focus:border-samand-teal focus:ring-3 focus:ring-samand-teal/15 rounded-lg px-3 py-2.5 text-base sm:text-[13.5px] font-normal text-samand-navy placeholder:text-[#7a8895] outline-none transition-all">
               </div>
             </div>
 
-            <div class="form-row">
-              <div class="form-field">
-                <label for="lead-devices">Cantidad aproximada de equipos</label>
-                <select id="lead-devices" name="devices">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              <div class="grid gap-1.5">
+                <label for="lead-email" class="text-xs font-semibold text-samand-navy">Correo electrónico</label>
+                <input id="lead-email" name="email" type="email" autocomplete="email" placeholder="nombre@empresa.com" class="w-full bg-[#f8fafb] border border-[#cfdbe1] hover:border-[#9cb2bd] focus:bg-white focus:border-samand-teal focus:ring-3 focus:ring-samand-teal/15 rounded-lg px-3 py-2.5 text-base sm:text-[13.5px] font-normal text-samand-navy placeholder:text-[#7a8895] outline-none transition-all">
+              </div>
+
+              <div class="grid gap-1.5">
+                <label for="lead-phone" class="text-xs font-semibold text-samand-navy">Teléfono o WhatsApp</label>
+                <input id="lead-phone" name="phone" type="tel" autocomplete="tel" placeholder="Código de área y número" class="w-full bg-[#f8fafb] border border-[#cfdbe1] hover:border-[#9cb2bd] focus:bg-white focus:border-samand-teal focus:ring-3 focus:ring-samand-teal/15 rounded-lg px-3 py-2.5 text-base sm:text-[13.5px] font-normal text-samand-navy placeholder:text-[#7a8895] outline-none transition-all">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              <div class="grid gap-1.5">
+                <label for="lead-devices" class="text-xs font-semibold text-samand-navy">Cantidad aproximada de equipos</label>
+                <select id="lead-devices" name="devices" class="w-full bg-[#f8fafb] border border-[#cfdbe1] hover:border-[#9cb2bd] focus:bg-white focus:border-samand-teal focus:ring-3 focus:ring-samand-teal/15 rounded-lg px-3 py-2.5 text-base sm:text-[13.5px] font-normal text-samand-navy outline-none transition-all">
                   <option value="" selected disabled>Selecciona un rango</option>
                   <option value="1-10">1 a 10 equipos</option>
                   <option value="11-25">11 a 25 equipos</option>
@@ -591,44 +1280,53 @@
                 </select>
               </div>
 
-              <div class="form-field">
-                <label for="lead-interest">Servicio o plan de interés</label>
-                <select id="lead-interest" name="interest">
+              <div class="grid gap-1.5">
+                <label for="lead-interest" class="text-xs font-semibold text-samand-navy">Servicio o plan de interés</label>
+                <select id="lead-interest" name="interest" class="w-full bg-[#f8fafb] border border-[#cfdbe1] hover:border-[#9cb2bd] focus:bg-white focus:border-samand-teal focus:ring-3 focus:ring-samand-teal/15 rounded-lg px-3 py-2.5 text-base sm:text-[13.5px] font-normal text-samand-navy outline-none transition-all">
                   <option value="" selected disabled>Selecciona una opción</option>
                   <option value="diagnostico">Diagnóstico general de infraestructura</option>
                   <optgroup label="Planes Mensuales MSP">
-                    <option value="Plan Básico (USD 190/mes)">Plan Básico (USD 190/mes)</option>
-                    <option value="Plan Avanzado (USD 380/mes)">Plan Avanzado (USD 380/mes)</option>
-                    <option value="Plan Integral (USD 790/mes)">Plan Integral (USD 790/mes)</option>
+                    <option value="Plan Básico (A cotizar)">Plan Básico (1–10 equipos · A cotizar)</option>
+                    <option value="Plan Avanzado (A cotizar)">Plan Avanzado (11–25 equipos · A cotizar)</option>
+                    <option value="Plan Integral (A cotizar)">Plan Integral (+25 equipos · A cotizar)</option>
+                  </optgroup>
+                  <optgroup label="Proyectos Puntuales (A cotizar)">
+                    <option value="Proyecto puntual / Por definir">Proyecto puntual (General)</option>
+                    <option value="Proyecto: Cableado y redes">Proyecto: Cableado estructurado y redes</option>
+                    <option value="Proyecto: Servidores y almacenamiento">Proyecto: Servidores y almacenamiento</option>
+                    <option value="Proyecto: Actualización de infraestructura">Proyecto: Implementación / actualización de infraestructura</option>
+                    <option value="Proyecto: Instalación de equipos">Proyecto: Instalación y configuración de equipos</option>
+                    <option value="Proyecto: Instalación de CCTV">Proyecto: Instalación y configuración de CCTV</option>
+                    <option value="Proyecto: Asesoría y diagnóstico">Proyecto: Asesoría y diagnóstico de infraestructura</option>
                   </optgroup>
                   <optgroup label="Servicios Especializados">
-                    <option value="Redes y conectividad">Redes y conectividad</option>
+                    <option value="Soporte técnico y mantenimiento">Soporte técnico y mantenimiento</option>
+                    <option value="Redes y conectividad empresarial">Redes y conectividad empresarial</option>
                     <option value="Servidores e infraestructura">Servidores e infraestructura</option>
-                    <option value="Estaciones de trabajo">Estaciones de trabajo</option>
-                    <option value="Respaldos y bases de datos">Respaldos y bases de datos</option>
-                    <option value="CCTV y acceso biométrico">CCTV y acceso biométrico</option>
-                    <option value="Monitoreo personalizado">Monitoreo personalizado</option>
+                    <option value="Respaldos y recuperación de datos">Respaldos y recuperación de datos</option>
+                    <option value="Monitoreo y administración IT">Monitoreo y administración IT</option>
+                    <option value="Seguridad electrónica y control de acceso">Seguridad electrónica y control de acceso</option>
                   </optgroup>
                 </select>
               </div>
             </div>
 
-            <div class="form-field">
-              <label for="lead-notes">
-                Mensaje adicional <span class="label-optional">(opcional)</span>
+            <div class="grid gap-1.5">
+              <label for="lead-notes" class="text-xs font-semibold text-samand-navy">
+                Mensaje adicional <span class="font-normal text-[#6b7d88]">(opcional)</span>
               </label>
-              <textarea id="lead-notes" name="notes" rows="3" placeholder="Describe brevemente tu requerimiento, horarios preferidos o situación actual..."></textarea>
+              <textarea id="lead-notes" name="notes" rows="3" placeholder="Describe brevemente tu requerimiento, horarios preferidos o situación actual..." class="w-full bg-[#f8fafb] border border-[#cfdbe1] hover:border-[#9cb2bd] focus:bg-white focus:border-samand-teal focus:ring-3 focus:ring-samand-teal/15 rounded-lg px-3 py-2.5 text-base sm:text-[13.5px] font-normal text-samand-navy placeholder:text-[#7a8895] outline-none transition-all resize-y min-h-[76px]"></textarea>
             </div>
 
-            <div class="form-actions">
-              <button type="button" class="button form-submit" aria-disabled="true">
+            <div class="grid gap-3 mt-1">
+              <button type="button" aria-disabled="true" class="w-full inline-flex items-center justify-center gap-3 bg-gradient-to-br from-samand-cyan to-[#0bb3d4] hover:from-[#3bd3f0] hover:to-samand-cyan text-samand-navy font-bold text-sm py-3.5 px-5 rounded-md cursor-pointer transition-all hover:-translate-y-0.5">
                 <span>Solicitar diagnóstico</span>
                 <span aria-hidden="true">→</span>
               </button>
 
-              <p id="form-preview-note" class="form-preview-note">
-                <span class="note-dot" aria-hidden="true"></span>
-                Maqueta visual en fase de diseño: el envío automático se habilitará al conectar los canales oficiales de recepción.
+              <p id="form-preview-note" class="flex items-start gap-2 m-0 px-3 py-2.5 rounded-lg bg-[#f3f7f9] border border-[#e1ebf0] text-[11.5px] leading-snug text-[#4f636e]">
+                <span class="w-1.5 h-1.5 rounded-full bg-samand-teal mt-1.5 shrink-0" aria-hidden="true"></span>
+                <span>Maqueta visual en fase de diseño: el envío automático se habilitará al conectar los canales oficiales de recepción.</span>
               </p>
             </div>
           </form>
@@ -638,37 +1336,41 @@
   </main>
 
   <!-- FOOTER -->
-  <footer id="footer-contacto">
-    <div class="wrap">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a class="logo" href="#inicio" aria-label="SAMANDTECH - Volver al inicio">
-            <img src="assets/logo-dark.svg" alt="SAMANDTECH" width="204" height="58" loading="lazy" decoding="async">
+  <footer id="footer-contacto" class="bg-samand-navy text-[#c2ced7] pt-14 pb-6">
+    <div class="w-[min(1240px,88%)] mx-auto">
+      <div class="footer-grid grid grid-cols-2 md:grid-cols-[1.4fr_1fr_1fr] gap-6 md:gap-10 pb-10 border-b border-white/10">
+        <div class="col-span-2 md:col-span-1">
+          <a href="#inicio" aria-label="SAMANDTECH - Volver al inicio" class="inline-flex items-center mb-3.5">
+            <img src="assets/logo-dark.svg" alt="SAMANDTECH" width="204" height="58" loading="lazy" decoding="async" class="w-[204px] h-auto">
           </a>
-          <p>Servicios de soporte técnico, infraestructura, seguridad electrónica y monitoreo para empresas.</p>
+          <p class="text-[13px] leading-[1.8] max-w-[310px] m-0">Servicios de soporte técnico, infraestructura, seguridad electrónica y monitoreo para empresas.</p>
         </div>
 
         <div>
-          <h3>EXPLORA</h3>
-          <a href="#nosotros">Nosotros</a>
-          <a href="#servicios">Servicios</a>
-          <a href="#planes">Planes</a>
-          <a href="#proceso">Cómo trabajamos</a>
-          <a href="#contacto">Solicitar diagnóstico</a>
+          <h3 class="text-xs tracking-[1.5px] text-white mt-2 mb-5 font-semibold">EXPLORA</h3>
+          <a href="#nosotros" class="block text-[13px] my-3 hover:text-samand-cyan transition-colors">Nosotros</a>
+          <a href="#servicios" class="block text-[13px] my-3 hover:text-samand-cyan transition-colors">Servicios</a>
+          <a href="#tecnologia" class="block text-[13px] my-3 hover:text-samand-cyan transition-colors">Tecnología propia</a>
+          <a href="#planes" class="block text-[13px] my-3 hover:text-samand-cyan transition-colors">Planes MSP</a>
+          <a href="#proyectos" class="block text-[13px] my-3 hover:text-samand-cyan transition-colors">Proyectos puntuales</a>
+          <a href="#proceso" class="block text-[13px] my-3 hover:text-samand-cyan transition-colors">Cómo trabajamos</a>
+          <a href="#clientes" class="block text-[13px] my-3 hover:text-samand-cyan transition-colors">Clientes</a>
+          <a href="#faq" class="block text-[13px] my-3 hover:text-samand-cyan transition-colors">Preguntas frecuentes</a>
+          <a href="#contacto" class="block text-[13px] my-3 hover:text-samand-cyan transition-colors">Solicitar diagnóstico</a>
         </div>
 
         <div>
-          <h3>ATENCIÓN</h3>
-          <div class="pending">
-            <strong>Atención comercial y técnica</strong>
+          <h3 class="text-xs tracking-[1.5px] text-white mt-2 mb-5 font-semibold">ATENCIÓN</h3>
+          <div class="text-[12.5px] text-[#9cb0bb] leading-[1.9]">
+            <strong class="block text-[#e2ecf0] font-medium mb-1">Atención comercial y técnica</strong>
             Modalidad remota y presencial<br>
             Propuestas a la medida de cada empresa
-            <a href="#contacto" class="footer-cta-link">Ir al formulario de contacto →</a>
+            <a href="#contacto" class="block text-samand-cyan font-semibold mt-3 hover:underline">Ir al formulario de contacto →</a>
           </div>
         </div>
       </div>
 
-      <div class="footer-bottom">
+      <div class="pt-6 flex flex-col sm:flex-row justify-between gap-3 text-[11.5px] text-[#9cb0bb]">
         <span>© <span id="year"></span> SAMANDTECH. Todos los derechos reservados.</span>
         <span>Soporte técnico e infraestructura IT</span>
       </div>
